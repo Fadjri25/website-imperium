@@ -14,16 +14,16 @@ import fadjri from "./assets/fadjri.png";
 const navLinks = [
   { label: "Beranda", href: "#beranda" },
   { label: "Tentang Kami", href: "#tentang-kami" },
-  { label: "Anggota", href: "#anggota" },
   { label: "Layanan", href: "#layanan" },
+  { label: "Anggota", href: "#anggota" },
   { label: "Kontak", href: "#kontak" },
 ];
 
 const footerLinks = [
   { label: "Beranda", href: "#beranda" },
   { label: "Tentang Kami", href: "#tentang-kami" },
-  { label: "Anggota", href: "#anggota" },
   { label: "Layanan", href: "#layanan" },
+  { label: "Anggota", href: "#anggota" },
   { label: "Kontak", href: "#kontak" },
 ];
 
@@ -69,11 +69,11 @@ const contactItems = [
 
 function Logo({ className = "" }: { className?: string }) {
   return (
-    <span className={`inline-flex items-center gap-0 leading-none ${className}`}>
-      <img src={mark} alt="Imperium Studio" width={40} height={40} className="h-9 w-9" />
-      <span className="inline-flex items-baseline text-xl font-extrabold tracking-tight font-spartan">
+    <span className={`inline-flex items-center gap-0.5 leading-none ${className}`}>
+      <img src={mark} alt="Imperium Studio" className="h-8 w-auto object-contain" />
+      <span className="inline-flex items-center text-xl font-extrabold tracking-tight font-spartan">
         <span className="-ml-1 text-brand">perium</span>
-        <span className="ml-1 text-sm font-extrabold tracking-tight text-foreground/70">STUDIO</span>
+        <span className="ml-1 text-xs font-extrabold tracking-wider text-foreground/70">STUDIO</span>
       </span>
     </span>
   );
