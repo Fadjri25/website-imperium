@@ -71,7 +71,7 @@ function Logo({ className = "" }: { className?: string }) {
   return (
     <span className={`inline-flex items-center gap-0 leading-none ${className}`}>
       <img src={mark} alt="Imperium Studio" width={40} height={40} className="h-9 w-9" />
-      <span className="inline-flex items-baseline text-xl font-extrabold tracking-tight">
+      <span className="inline-flex items-baseline text-xl font-extrabold tracking-tight font-spartan">
         <span className="-ml-1 text-brand">perium</span>
         <span className="ml-1 text-sm font-extrabold tracking-tight text-foreground/70">STUDIO</span>
       </span>
@@ -121,12 +121,12 @@ function HeroSection() {
           <div className="absolute inset-0 -z-10 bg-brand/85" />
 
           <div className="max-w-lg">
-            <h1 className="text-3xl leading-tight font-extrabold text-brand-foreground sm:text-4xl lg:text-5xl">
+            <h1 className="text-3xl leading-tight font-extrabold text-brand-foreground sm:text-4xl lg:text-5xl font-spartan">
               Otomatisasi Pintar, Akselerasi Sukses Bisnis Anda.
             </h1>
             <a
               href="#tentang-kami"
-              className="mt-8 inline-flex items-center justify-center rounded-full bg-white px-8 py-3.5 text-sm font-bold text-brand shadow-md hover:bg-gray-100 hover:shadow-lg transition-all cursor-pointer"
+              className="mt-8 inline-flex items-center justify-center rounded-full bg-white px-8 py-3.5 text-sm font-bold text-brand shadow-md hover:bg-gray-100 hover:shadow-lg transition-all cursor-pointer font-spartan"
             >
               Tentang Kami
             </a>
@@ -152,7 +152,7 @@ function AboutSection() {
     <section id="tentang-kami" className="mx-auto max-w-7xl px-5 py-16 sm:px-8 scroll-mt-20">
       <div className="grid items-center gap-12 lg:grid-cols-2">
         <div>
-          <h2 className="text-3xl font-extrabold text-brand sm:text-4xl">Tentang Kami</h2>
+          <h2 className="text-3xl font-extrabold text-brand sm:text-4xl font-spartan">Tentang Kami</h2>
           <div className="mt-6 space-y-4 text-base leading-relaxed text-foreground/80">
             <p>
               Imperium Studio adalah konsultan IT yang membantu organisasi merancang,
@@ -189,7 +189,7 @@ function ServicesSection() {
   return (
     <section id="layanan" className="bg-brand-soft/60 py-16 scroll-mt-20">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
-        <h2 className="text-center text-3xl font-extrabold text-brand sm:text-4xl">
+        <h2 className="text-center text-3xl font-extrabold text-brand sm:text-4xl font-spartan">
           Layanan Yang Ditawarkan
         </h2>
         <div className="mt-12 grid gap-6 sm:grid-cols-2">
@@ -201,7 +201,7 @@ function ServicesSection() {
               <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand text-brand-foreground">
                 <s.icon size={24} />
               </div>
-              <h3 className="mt-5 text-lg font-bold text-brand">{s.title}</h3>
+              <h3 className="mt-5 text-lg font-bold text-brand font-spartan">{s.title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-foreground/70">{s.desc}</p>
             </article>
           ))}
@@ -214,7 +214,7 @@ function ServicesSection() {
 function TeamSection() {
   return (
     <section id="anggota" className="mx-auto max-w-7xl px-5 py-16 sm:px-8 scroll-mt-20">
-      <h2 className="text-3xl font-extrabold text-brand sm:text-4xl">Mengenal Tim Kami</h2>
+      <h2 className="text-3xl font-extrabold text-brand sm:text-4xl font-spartan">Mengenal Tim Kami</h2>
       <p className="mt-3 text-lg text-foreground/80">
         Di Balik Setiap Solusi Digital, Ada Tim yang Berdedikasi.
       </p>
@@ -228,7 +228,7 @@ function TeamSection() {
               className="aspect-square w-full rounded-2xl object-cover"
             />
             <figcaption className="mt-4">
-              <p className="font-bold text-brand">{m.name}</p>
+              <p className="font-bold text-brand font-spartan">{m.name}</p>
               <p className="text-sm text-foreground/70">{m.role}</p>
             </figcaption>
           </figure>
@@ -242,7 +242,7 @@ function ContactSection() {
   return (
     <section id="kontak" className="relative overflow-hidden py-16 scroll-mt-20">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
-        <h2 className="text-3xl font-extrabold text-brand sm:text-4xl">Informasi Kontak</h2>
+        <h2 className="text-3xl font-extrabold text-brand sm:text-4xl font-spartan">Informasi Kontak</h2>
         <div className="mt-10 grid items-center gap-10 lg:grid-cols-2">
           <div className="rounded-3xl bg-muted p-6">
             <img
@@ -260,7 +260,7 @@ function ContactSection() {
                 </span>
                 <span>
                   <span className="block text-sm text-foreground/60">{i.label}</span>
-                  <span className="block text-lg font-semibold text-foreground">{i.value}</span>
+                  <span className="block text-lg font-semibold text-foreground font-spartan">{i.value}</span>
                 </span>
               </li>
             ))}
@@ -285,20 +285,20 @@ function Footer() {
       <div className="mx-auto grid max-w-7xl gap-10 px-5 py-14 sm:px-8 lg:grid-cols-[1.4fr_1fr]">
         <div>
           <p className="text-sm font-medium opacity-90">Butuh Bantuan?</p>
-          <h2 className="mt-2 text-3xl font-extrabold sm:text-4xl">Kami Hadir Sebagai Solusi</h2>
+          <h2 className="mt-2 text-3xl font-extrabold sm:text-4xl font-spartan">Kami Hadir Sebagai Solusi</h2>
           <p className="mt-3 max-w-md text-sm opacity-90">
             Ceritakan tantangan bisnis Anda, dan tim kami akan membantu merancang solusi digital
             yang tepat sasaran.
           </p>
           <a
             href="#kontak"
-            className="mt-7 inline-flex items-center rounded-full bg-background px-7 py-3 text-sm font-semibold text-brand transition-transform hover:scale-105"
+            className="mt-7 inline-flex items-center rounded-full bg-background px-7 py-3 text-sm font-semibold text-brand transition-transform hover:scale-105 font-spartan"
           >
             Hubungi Kami
           </a>
         </div>
         <div>
-          <h3 className="text-lg font-bold">Daftar Menu</h3>
+          <h3 className="text-lg font-bold font-spartan">Daftar Menu</h3>
           <ul className="mt-4 space-y-3 text-sm">
             {footerLinks.map((l) => (
               <li key={l.href}>
