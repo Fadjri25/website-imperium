@@ -69,14 +69,14 @@ const contactItems = [
   { icon: MapPin, label: "Lokasi Kantor", value: "Pontianak, Kalimantan Barat" },
 ];
 
-// Logo Component (Spasi seimbang antara logo mark & teks PERIUM)
+// Logo Component (Spasi diperdekat secara pas menggunakan gap-1)
 function Logo({ className = "", light = false }: { className?: string; light?: boolean }) {
   return (
-    <a href="#beranda" className={`inline-flex items-center gap-2 group cursor-pointer ${className}`}>
+    <a href="#beranda" className={`inline-flex items-center gap-1 group cursor-pointer ${className}`}>
       <img
         src={mark}
         alt="Imperium Studio Logo"
-        className={`h-7 sm:h-8 w-auto object-contain shrink-0 transition-transform group-hover:scale-105 -translate-y-[2px] mr-0.5 ${
+        className={`h-7 sm:h-8 w-auto object-contain shrink-0 transition-transform group-hover:scale-105 -translate-y-[2px] ${
           light ? "brightness-0 invert" : ""
         }`}
       />
@@ -116,10 +116,9 @@ function HeroSection() {
     <section id="beranda" className="relative border-b border-brand/15 bg-background py-16 lg:py-24 scroll-mt-20 overflow-hidden">
       <div className="w-full px-0">
         
-        {/* Kontainer Utama IMPERIUM dengan ruang vertikal (padding) yang cukup agar kepala huruf tidak terpotong */}
+        {/* Kontainer Utama IMPERIUM */}
         <div className="relative w-full flex items-center justify-center my-6 sm:my-12 py-10 sm:py-16 select-none overflow-visible">
           
-          {/* Teks IMPERIUM: Dipertebal dengan WebkitTextStroke & Skala Vertikal Pas (Tidak Terpotong) */}
           <h1 
             className="w-full text-center text-[22vw] font-black tracking-tighter uppercase font-spartan text-brand leading-none whitespace-nowrap transform scale-x-105 scale-y-[1.35] origin-center"
             style={{
@@ -129,7 +128,6 @@ function HeroSection() {
             IMPERIUM
           </h1>
           
-          {/* Teks Studio Estetik dengan Stroke Putih Tebal */}
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-10">
             <span 
               className="font-serif italic text-5xl sm:text-7xl md:text-8xl lg:text-[7.5rem] text-brand font-extrabold tracking-wider filter drop-shadow-md"
@@ -143,14 +141,14 @@ function HeroSection() {
           </div>
         </div>
 
-        {/* Tagline di Tengah */}
+        {/* Tagline */}
         <div className="mt-8 sm:mt-12 max-w-xl mx-auto text-center px-6">
           <p className="text-sm sm:text-base leading-relaxed text-foreground/85 font-poppins font-normal tracking-wide">
             Akselerasi efisiensi bisnis Anda melalui integrasi sistem digital pintar yang dirancang presisi sesuai alur kerja perusahaan.
           </p>
         </div>
 
-        {/* Tombol Tentang Kami Rounded / Pill */}
+        {/* Tombol Tentang Kami */}
         <div className="mt-8 flex justify-center">
           <a
             href="#tentang-kami"
@@ -324,7 +322,6 @@ function TeamSection() {
           {members.map((m, idx) => (
             <div key={m.name} className="group relative border border-brand/20 bg-card overflow-hidden">
               <div className="aspect-square w-full overflow-hidden bg-muted">
-                {/* Foto Jesika di-zoom (scale-125 object-top) agar konsisten dengan anggota lain */}
                 <img
                   src={m.img}
                   alt={m.name}
@@ -399,7 +396,6 @@ function ContactSection() {
             </div>
           </div>
 
-          {/* Foto Jesika Kontak di-zoom (scale-125 object-top) */}
           <div className="lg:col-span-5 flex justify-center">
             <div className="relative w-full max-w-md border-4 border-white shadow-2xl overflow-hidden bg-white/5">
               <img
