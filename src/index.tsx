@@ -69,18 +69,18 @@ const contactItems = [
   { icon: MapPin, label: "Lokasi Kantor", value: "Pontianak, Kalimantan Barat" },
 ];
 
-// Logo Component
+// Logo Component (Ukuran logo IM diperbesar & digeser ke atas agar sejajar dengan huruf P)
 function Logo({ className = "", light = false }: { className?: string; light?: boolean }) {
   return (
-    <a href="#beranda" className={`inline-flex items-center gap-0.5 group cursor-pointer ${className}`}>
+    <a href="#beranda" className={`inline-flex items-center gap-1 group cursor-pointer ${className}`}>
       <img
         src={mark}
         alt="Imperium Studio Logo"
-        className={`h-6 w-auto object-contain shrink-0 transition-transform group-hover:scale-105 ${
+        className={`h-7 sm:h-8 w-auto object-contain shrink-0 transition-transform group-hover:scale-105 -translate-y-[3px] ${
           light ? "brightness-0 invert" : ""
         }`}
       />
-      <span className="inline-flex items-center gap-1.5 text-base sm:text-lg font-black tracking-widest uppercase font-spartan translate-y-[1px]">
+      <span className="inline-flex items-center gap-1.5 text-base sm:text-lg font-black tracking-widest uppercase font-spartan">
         <span className={light ? "text-white" : "text-brand"}>PERIUM</span>
         <span className={light ? "text-white" : "text-foreground font-black"}>STUDIO</span>
       </span>
