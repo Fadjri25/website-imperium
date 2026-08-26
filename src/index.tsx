@@ -7,8 +7,6 @@ import {
   MessagesSquare,
   GraduationCap,
   Wrench,
-  Sparkles,
-  ShieldCheck,
 } from "lucide-react";
 
 import heroMeeting from "./assets/hero-meeting.jpg";
@@ -115,7 +113,7 @@ function HeroSection() {
   return (
     <section id="beranda" className="relative flex min-h-[calc(100vh-60px)] items-center overflow-hidden bg-background scroll-mt-20">
       <div className="grid w-full items-center gap-8 lg:grid-cols-2">
-        {/* Kolom Kiri: Headline & CTA (Dominan & Tegas) */}
+        {/* Kolom Kiri: Headline & CTA */}
         <div
           className="relative isolate flex min-h-[520px] items-center overflow-hidden py-20 pr-10 pl-5 sm:py-24 sm:pl-10 lg:min-h-[660px] lg:py-36 lg:pr-24 lg:pl-16"
           style={{
@@ -147,42 +145,16 @@ function HeroSection() {
           </div>
         </div>
 
-        {/* Kolom Kanan: Logo dengan Floating Glassmorphism Cards */}
+        {/* Kolom Kanan: Logo Brand (Ukuran Diperkecil & Clean) */}
         <div className="relative flex items-center justify-center px-6 py-12 lg:py-0">
-          {/* Subtle Backlight Glow */}
-          <div className="absolute h-72 w-72 rounded-full bg-brand/10 blur-3xl -z-10" />
-
           <div className="relative flex items-center justify-center">
-            {/* Logo Mark Utama */}
             <img
               src={mark}
               alt="Logo Imperium Studio"
-              width={420}
-              height={420}
-              className="h-64 w-64 object-contain sm:h-80 sm:w-80 lg:h-[400px] lg:w-[400px] drop-shadow-sm"
+              width={340}
+              height={340}
+              className="h-52 w-52 object-contain sm:h-64 sm:w-64 lg:h-[340px] lg:w-[340px] drop-shadow-sm"
             />
-
-            {/* Floating Card 1: Kiri Atas */}
-            <div className="absolute -top-4 -left-4 sm:-left-8 flex items-center gap-3 rounded-2xl border border-white/80 bg-white/95 p-3.5 shadow-xl backdrop-blur-md transition-transform hover:scale-105">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand/10 text-brand">
-                <Sparkles size={20} />
-              </div>
-              <div className="text-left">
-                <p className="text-xs font-bold text-foreground font-spartan">100% Custom</p>
-                <p className="text-[11px] text-muted-foreground">Solusi Spesifik Bisnis</p>
-              </div>
-            </div>
-
-            {/* Floating Card 2: Kanan Bawah */}
-            <div className="absolute -bottom-4 -right-4 sm:-right-8 flex items-center gap-3 rounded-2xl border border-white/80 bg-white/95 p-3.5 shadow-xl backdrop-blur-md transition-transform hover:scale-105">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand text-white">
-                <ShieldCheck size={20} />
-              </div>
-              <div className="text-left">
-                <p className="text-xs font-bold text-foreground font-spartan">Mitra IT Terpercaya</p>
-                <p className="text-[11px] text-muted-foreground">Kedaulatan Digital</p>
-              </div>
-            </div>
           </div>
         </div>
       </div>
