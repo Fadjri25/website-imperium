@@ -162,13 +162,27 @@ function HeroSection() {
   );
 }
 
-{/* Banner Tipografi Raksasa Antara Beranda & Tentang Kami */}
+{/* Banner Tipografi Tanpa Background - Full-width mentok dari kiri ke kanan */}
 function ImperiumBanner() {
   return (
-    <div className="w-full overflow-hidden bg-brand py-6 sm:py-8 lg:py-10 shadow-inner">
-      <h2 className="w-full text-center text-[14.5vw] font-black leading-none tracking-tighter text-brand-foreground font-spartan uppercase select-none whitespace-nowrap">
-        IMPERIUM
-      </h2>
+    <div className="w-full overflow-hidden bg-background py-10 sm:py-16 lg:py-20 select-none text-brand">
+      <svg
+        viewBox="0 0 1000 120"
+        className="w-full h-auto block"
+        preserveAspectRatio="none"
+      >
+        <text
+          x="0"
+          y="105"
+          textLength="1000"
+          lengthAdjust="spacingAndGlyphs"
+          fill="currentColor"
+          className="font-spartan font-black uppercase"
+          style={{ fontSize: "130px" }}
+        >
+          IMPERIUM
+        </text>
+      </svg>
     </div>
   );
 }
