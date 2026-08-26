@@ -8,7 +8,6 @@ import {
   CheckCircle2,
 } from "lucide-react";
 
-import heroMeeting from "./assets/hero-meeting.jpg";
 import aboutTeam from "./assets/about-team.jpg";
 import mark from "./assets/imperium-mark.png";
 import jesika from "./assets/jesika.png";
@@ -71,7 +70,7 @@ const contactItems = [
   { icon: MapPin, label: "Lokasi Kantor", value: "Pontianak, Kalimantan Barat" },
 ];
 
-// Logo Component - Sejajar Presisi & Footer White Icon Fix
+// Logo Component - Presisi & Full White di Footer
 function Logo({ className = "", light = false }: { className?: string; light?: boolean }) {
   return (
     <a href="#beranda" className={`inline-flex items-center gap-0.5 group cursor-pointer ${className}`}>
@@ -112,113 +111,51 @@ function Navbar() {
   );
 }
 
-// SEKSI 01: HERO / BERANDA
+// SEKSI 01: HERO / BERANDA (Rombak Total: Giant IMPERIUM + Embedded STUDIO + Centered Tagline & Button)
 function HeroSection() {
   return (
-    <section id="beranda" className="relative border-b border-brand/15 bg-background py-16 lg:py-24 scroll-mt-20 overflow-hidden">
-      <div className="mx-auto max-w-7xl px-5 sm:px-8">
+    <section id="beranda" className="relative border-b border-brand/15 bg-background py-20 lg:py-28 scroll-mt-20 overflow-hidden">
+      <div className="mx-auto w-full px-4 sm:px-6">
         
-        <div className="grid lg:grid-cols-12 gap-6 items-end pb-8 border-b border-brand/15 mb-10">
-          <div className="lg:col-span-8">
-            <div className="inline-flex items-center gap-2 text-xs font-extrabold tracking-widest uppercase text-brand font-spartan">
-              <Sparkles size={14} />
-              <span>IT CONSULTANT & SYSTEM AUTOMATION</span>
-            </div>
+        {/* Top Tag Header */}
+        <div className="flex justify-center mb-6 sm:mb-8">
+          <div className="inline-flex items-center gap-2 text-[11px] sm:text-xs font-extrabold tracking-widest uppercase text-brand font-spartan bg-brand/5 px-4 py-1.5 border border-brand/15">
+            <Sparkles size={14} />
+            <span>IT CONSULTANT & SYSTEM AUTOMATION</span>
           </div>
-          <div className="lg:col-span-4 flex justify-start lg:justify-end">
-            <span className="text-6xl sm:text-7xl font-black text-brand/20 font-spartan leading-none">
-              01
+        </div>
+
+        {/* Giant Edge-to-Edge IMPERIUM Text with Center STUDIO Badge */}
+        <div className="relative w-full text-center flex items-center justify-center my-4 sm:my-8 overflow-hidden py-4">
+          <h1 className="text-[13.5vw] lg:text-[14vw] font-black tracking-tighter uppercase font-spartan text-brand leading-none w-full select-none transform scale-y-125">
+            IMPERIUM
+          </h1>
+          
+          {/* Embedded STUDIO kecil di tengah tulisan IMPERIUM */}
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+            <span className="bg-background text-foreground px-4 sm:px-6 py-1.5 sm:py-2 text-xs sm:text-sm md:text-base font-extrabold tracking-[0.35em] uppercase font-poppins border-2 border-brand shadow-2xl">
+              STUDIO
             </span>
           </div>
         </div>
 
-        <div className="grid lg:grid-cols-12 gap-10 items-stretch">
-          
-          <div className="lg:col-span-7 flex flex-col justify-between">
-            <div>
-              <h1 className="text-5xl sm:text-7xl lg:text-8xl font-black uppercase text-brand tracking-tighter leading-[0.88] font-spartan">
-                OTOMATISASI<br />
-                PINTAR.
-              </h1>
-              <p className="mt-5 text-base leading-relaxed text-foreground/80 font-medium max-w-xl">
-                Akselerasi efisiensi bisnis Anda melalui integrasi sistem digital pintar yang dirancang presisi sesuai alur kerja perusahaan.
-              </p>
-            </div>
-
-            <div className="relative mt-8 group w-full max-w-2xl">
-              <div className="relative aspect-[16/9] w-full overflow-hidden rounded-sm shadow-xl border-2 border-brand/20 bg-card">
-                <img
-                  src={heroMeeting}
-                  alt="Tim Imperium Studio Berdiskusi"
-                  className="h-full w-full object-cover filter contrast-[1.05] transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-brand/40 via-transparent to-transparent" />
-                <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-white">
-                  <span className="text-xs font-bold font-spartan tracking-wider uppercase">
-                    ✦ DIGITAL WORKFLOW INTEGRATION
-                  </span>
-                  <span className="text-[10px] bg-background/90 text-brand px-3 py-1 font-extrabold uppercase font-spartan">
-                    PONTIANAK HQ
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            <div className="mt-8">
-              <a
-                href="#tentang-kami"
-                className="inline-flex items-center gap-3 bg-brand text-brand-foreground px-8 py-4 text-xs font-extrabold tracking-widest uppercase font-spartan hover:bg-brand/90 transition-all shadow-lg hover:translate-x-1"
-              >
-                TENTANG KAMI <ArrowRight size={16} />
-              </a>
-            </div>
-          </div>
-
-          <div className="lg:col-span-5 flex flex-col justify-between border-l-0 lg:border-l border-brand/15 lg:pl-10 pt-6 lg:pt-0">
-            <div>
-              <span className="text-xs font-extrabold tracking-widest text-foreground/50 font-spartan uppercase block mb-3">
-                // MITRA TEKNOLOGI ANDALAN
-              </span>
-              <h3 className="text-2xl font-black text-brand font-spartan uppercase leading-tight">
-                Membangun Kemandirian Sistem Digital Perusahaan
-              </h3>
-              
-              <p className="mt-4 text-sm leading-relaxed text-foreground/80 font-medium">
-                Kami membantu organisasi beralih dari proses manual yang lambat menuju otomatisasi terstruktur tanpa perlu ketergantungan penuh pada pihak luar.
-              </p>
-
-              <div className="mt-8 space-y-4">
-                <div className="flex items-start gap-3">
-                  <div className="flex h-7 w-7 shrink-0 items-center justify-center bg-brand/10 text-brand font-black text-xs font-spartan">
-                    01
-                  </div>
-                  <div>
-                    <h4 className="text-xs font-bold text-brand font-spartan uppercase">Alur Kerja Disesuaikan 100%</h4>
-                    <p className="text-xs text-foreground/70 mt-0.5">Sistem dibangun khusus mengikuti proses operasional unik perusahaan Anda.</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3">
-                  <div className="flex h-7 w-7 shrink-0 items-center justify-center bg-brand/10 text-brand font-black text-xs font-spartan">
-                    02
-                  </div>
-                  <div>
-                    <h4 className="text-xs font-bold text-brand font-spartan uppercase">Dukungan & Pelatihan Mandiri</h4>
-                    <p className="text-xs text-foreground/70 mt-0.5">Tim Anda dibimbing hingga mahir mengoperasikan sistem sepenuhnya.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="mt-10 pt-4 border-t border-brand/15 flex items-center justify-between text-[11px] font-bold tracking-widest text-brand uppercase font-spartan">
-              <span>EXPLORE SERVICES</span>
-              <a href="#layanan" className="hover:underline flex items-center gap-1">
-                SELENGKAPNYA →
-              </a>
-            </div>
-          </div>
-
+        {/* Tagline di Tengah dengan Font Poppins Kecil */}
+        <div className="mt-8 sm:mt-12 max-w-2xl mx-auto text-center px-4">
+          <p className="text-xs sm:text-sm md:text-base leading-relaxed text-foreground/80 font-poppins font-normal">
+            Akselerasi efisiensi bisnis Anda melalui integrasi sistem digital pintar yang dirancang presisi sesuai alur kerja perusahaan.
+          </p>
         </div>
+
+        {/* Tombol Tentang Kami di Tengah */}
+        <div className="mt-8 sm:mt-10 flex justify-center">
+          <a
+            href="#tentang-kami"
+            className="inline-flex items-center gap-3 bg-brand text-brand-foreground px-8 py-4 text-xs font-extrabold tracking-widest uppercase font-spartan hover:bg-brand/90 transition-all shadow-lg hover:scale-105"
+          >
+            TENTANG KAMI <ArrowRight size={16} />
+          </a>
+        </div>
+
       </div>
     </section>
   );
