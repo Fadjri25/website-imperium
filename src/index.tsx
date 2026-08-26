@@ -4,14 +4,10 @@ import {
   Mail,
   MapPin,
   ArrowRight,
-  CheckCircle2,
   Sparkles,
   Zap,
   ShieldCheck,
-  Code2,
-  LineChart,
-  Users2,
-  Headphones,
+  CheckCircle2,
 } from "lucide-react";
 
 import heroMeeting from "./assets/hero-meeting.jpg";
@@ -37,34 +33,26 @@ const services = [
   {
     num: "01",
     tag: "DEVELOPMENT",
-    icon: Code2,
     title: "Custom Software Development",
-    desc: "Pengembangan aplikasi web dan sistem internal yang dirancang khusus mengikuti alur kerja bisnis Anda secara presisi.",
-    highlights: ["Sistem Web Custom", "Alur Kerja Otomatis", "Arsitektur Scalable"],
+    desc: "Pengembangan aplikasi web dan sistem internal khusus yang disesuaikan presisi dengan alur kerja bisnis Anda.",
   },
   {
     num: "02",
     tag: "CONSULTATION",
-    icon: LineChart,
     title: "Free IT & Business Consultation",
-    desc: "Sesi diskusi & analisis gratis untuk memetakan kebutuhan teknologi serta menentukan prioritas digitalisasi perusahaan.",
-    highlights: ["Analisis Kebutuhan", "Pemetaan Alur Kerja", "Rekomendasi Solusi"],
+    desc: "Sesi konsultasi gratis untuk memetakan kebutuhan teknologi serta menentukan prioritas digitalisasi perusahaan.",
   },
   {
     num: "03",
     tag: "TRAINING",
-    icon: Users2,
     title: "Free Hands-on Training / Bimtek",
-    desc: "Pelatihan teknis langsung bagi tim Anda agar sistem baru dapat dioperasikan secara mandiri dan optimal.",
-    highlights: ["Bimbingan Langsung", "Modul Operasional", "Pendampingan Tim"],
+    desc: "Pelatihan langsung bagi tim Anda agar sistem baru dapat dioperasikan secara optimal dan dikuasai mandiri.",
   },
   {
     num: "04",
     tag: "SUPPORT",
-    icon: Headphones,
     title: "Free Maintenance During Contract",
-    desc: "Perawatan sistem rutin, perbaikan kendala, dan support teknis tanpa biaya tambahan selama masa kontrak berjalan.",
-    highlights: ["Jaminan Bebas Bug", "Support Fast-Response", "Update Berkala"],
+    desc: "Perawatan rutin, perbaikan kendala, dan support teknis tanpa biaya tambahan selama masa kontrak berjalan.",
   },
 ];
 
@@ -81,22 +69,22 @@ const members = [
 const contactItems = [
   { icon: User, label: "Kontak Utama", value: "Jesika Tan" },
   { icon: Phone, label: "Telepon / WhatsApp", value: "+62 896 6854 6886" },
-  { icon: Mail, label: "Email Resmi", value: "jesikatan90@gmail.com" },
+  { icon: Mail, label: "Surel Resmi", value: "jesikatan90@gmail.com" },
   { icon: MapPin, label: "Lokasi Kantor", value: "Pontianak, Kalimantan Barat" },
 ];
 
-// Component Logo Presisi Sejajar & Tanpa Jeda
+// Logo Component - Sejajar, Presisi, Tanpa Spasi
 function Logo({ className = "", light = false }: { className?: string; light?: boolean }) {
   return (
     <a href="#beranda" className={`inline-flex items-center leading-none group cursor-pointer ${className}`}>
-      {/* Icon logo im menempel langsung tanpa margin kanan */}
+      {/* Icon logo im menempel langsung tanpa spasi */}
       <img
         src={mark}
-        alt="Imperium Logo"
+        alt="Imperium Studio"
         className="h-7 w-auto object-contain -mr-0.5 transition-transform group-hover:scale-105"
       />
-      {/* PERIUM & STUDIO disamakan ukuran, font-family, dan font-weight */}
-      <span className="inline-flex items-center gap-1 text-base font-black tracking-wider uppercase font-spartan">
+      {/* PERIUM & STUDIO disamakan font, size, weight, dan alignments */}
+      <span className="inline-flex items-center gap-1.5 text-base sm:text-lg font-black tracking-widest uppercase font-spartan">
         <span className={light ? "text-white" : "text-brand"}>PERIUM</span>
         <span className={light ? "text-white" : "text-foreground font-black"}>STUDIO</span>
       </span>
@@ -106,7 +94,7 @@ function Logo({ className = "", light = false }: { className?: string; light?: b
 
 function Navbar() {
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-brand/10 bg-background/95 backdrop-blur-md shadow-sm">
+    <header className="sticky top-0 z-50 w-full border-b border-brand/15 bg-background/95 backdrop-blur-md">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         <Logo />
         <ul className="flex items-center space-x-6 sm:space-x-8 text-xs font-bold tracking-widest uppercase text-brand font-spartan">
@@ -126,109 +114,91 @@ function Navbar() {
   );
 }
 
-// SEKSI 01: HERO / BERANDA (Sisi kanan Intro diperbaiki total)
+// SEKSI 01: HERO / BERANDA (Editorial Style + Clean Right Intro Box)
 function HeroSection() {
   return (
-    <section id="beranda" className="relative border-b border-brand/10 bg-background py-16 lg:py-20 scroll-mt-20 overflow-hidden">
+    <section id="beranda" className="relative border-b border-brand/15 bg-background py-16 lg:py-24 scroll-mt-20 overflow-hidden">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
-        <div className="grid lg:grid-cols-12 gap-10 items-stretch">
+        <div className="grid lg:grid-cols-12 gap-8 items-stretch">
           
-          {/* Sisi Kiri: Typography Header & Hero Image Frame */}
-          <div className="lg:col-span-7 flex flex-col justify-between">
+          {/* Sisi Kiri: Giant Editorial Typography & Photo */}
+          <div className="lg:col-span-8 relative flex flex-col justify-between">
             <div>
-              <div className="inline-flex items-center gap-2 rounded-full border border-brand/20 bg-brand/5 px-3 py-1 text-[11px] font-bold tracking-widest text-brand uppercase font-spartan mb-4">
-                <Sparkles size={14} className="text-brand" />
-                <span>IT CONSULTANT & SYSTEM AUTOMATION</span>
+              <div className="inline-flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-brand font-spartan mb-3">
+                <Sparkles size={14} />
+                <span>IMPERIUM STUDIO IT CONSULTANT</span>
               </div>
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black uppercase text-brand tracking-tighter leading-[0.9] font-spartan">
+              <h1 className="text-5xl sm:text-7xl lg:text-8xl font-black uppercase text-brand tracking-tighter leading-[0.88] font-spartan">
                 OTOMATISASI<br />
                 PINTAR.
               </h1>
-              <p className="mt-4 text-base font-medium text-foreground/80 max-w-xl">
-                Akselerasi efisiensi bisnis Anda melalui sistem digital terintegrasi yang dirancang khusus sesuai alur kerja perusahaan.
-              </p>
             </div>
 
-            {/* Frame Foto Utama dengan Floating Badge */}
-            <div className="relative mt-8 group">
-              <div className="relative aspect-[16/9] w-full overflow-hidden rounded-xl border border-brand/20 shadow-xl bg-card">
+            {/* Overlapping Hero Image Frame */}
+            <div className="relative mt-8 z-10 w-full max-w-2xl group">
+              <div className="relative aspect-[16/9] w-full overflow-hidden rounded-sm shadow-2xl border-4 border-background bg-card">
                 <img
                   src={heroMeeting}
                   alt="Tim Imperium Studio"
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="h-full w-full object-cover filter contrast-[1.05] transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-brand/60 via-transparent to-transparent" />
-                <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-white">
-                  <span className="text-xs font-bold font-spartan tracking-wider uppercase">
-                    ✦ TRANSFORMASI DIGITAL BISNIS
-                  </span>
-                  <span className="text-[10px] bg-white/20 backdrop-blur-md px-2.5 py-1 rounded-full font-semibold">
-                    PONTIANAK HQ
-                  </span>
-                </div>
+                <div className="absolute inset-0 bg-brand/10 group-hover:bg-transparent transition-colors" />
               </div>
             </div>
 
-            {/* CTA Button */}
+            {/* Button CTA */}
             <div className="mt-8">
               <a
                 href="#tentang-kami"
-                className="inline-flex items-center gap-3 rounded-lg bg-brand px-8 py-4 text-xs font-extrabold tracking-widest uppercase text-brand-foreground shadow-lg transition-all hover:bg-brand/90 hover:scale-[1.02] hover:shadow-xl font-spartan"
+                className="inline-flex items-center gap-3 bg-brand text-brand-foreground px-8 py-4 text-xs font-extrabold tracking-widest uppercase font-spartan hover:bg-brand/90 transition-all shadow-lg hover:translate-x-1"
               >
-                EKSPLORASI SELENGKAPNYA <ArrowRight size={16} />
+                TENTANG KAMI <ArrowRight size={16} />
               </a>
             </div>
           </div>
 
-          {/* Sisi Kanan: Intro Card Bersih & Interaktif (Tanpa angka menimpa) */}
-          <div className="lg:col-span-5 flex flex-col justify-between rounded-2xl border border-brand/20 bg-card p-8 shadow-md relative overflow-hidden">
-            {/* Top Bar Card */}
+          {/* Sisi Kanan: Intro Card Bersih & Terstruktur (Tanpa bertimpa-timpa) */}
+          <div className="lg:col-span-4 flex flex-col justify-between border-2 border-brand/20 bg-brand/5 p-8 relative">
             <div>
-              <div className="flex items-center justify-between pb-4 border-b border-brand/10">
+              {/* Header Card Modul 01 */}
+              <div className="flex items-center justify-between pb-4 border-b border-brand/20">
                 <span className="text-xs font-black tracking-widest text-brand font-spartan uppercase">
-                  #01 INTRODUCTIONS
+                  INTRO
                 </span>
-                <span className="inline-flex items-center gap-1.5 text-[11px] font-bold text-emerald-600 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200">
-                  <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
-                  AKTIF & SIAP
+                <span className="text-2xl font-black text-brand font-spartan">
+                  01
                 </span>
               </div>
 
               <div className="mt-6">
-                <h3 className="text-xl font-extrabold text-brand font-spartan uppercase">
-                  MITRA TEKNOLOGI TERPERCAYA
+                <span className="text-[11px] font-bold tracking-wider text-foreground/50 uppercase font-spartan block mb-1">
+                  KAMI ADALAH
+                </span>
+                <h3 className="text-lg font-black text-brand font-spartan uppercase tracking-tight">
+                  Mitra Transformasi Digital
                 </h3>
-                <p className="mt-3 text-sm leading-relaxed text-foreground/80 font-medium">
-                  Imperium Studio merancang dan mengintegrasikan sistem digital yang disesuaikan penuh dengan operasional bisnis Anda. Kami memastikan tim Anda memiliki kendali penuh atas teknologi masa depan.
+                <p className="mt-4 text-sm leading-relaxed text-foreground/80 font-medium">
+                  Konsultan IT tepercaya yang siap mendampingi modernisasi bisnis Anda melalui otomatisasi alur kerja dan integrasi sistem tingkat tinggi.
                 </p>
               </div>
 
-              {/* Poin-poin Keunggulan Interaktif */}
+              {/* Poin Keunggulan Ringkas */}
               <div className="mt-8 space-y-3">
-                <div className="flex items-start gap-3 p-3 rounded-lg bg-brand/5 border border-brand/10">
-                  <Zap className="h-5 w-5 text-brand shrink-0 mt-0.5" />
-                  <div>
-                    <h4 className="text-xs font-bold text-brand font-spartan uppercase">100% Custom Workflow</h4>
-                    <p className="text-[12px] text-foreground/70">Disesuaikan tanpa batasan template kaku.</p>
-                  </div>
+                <div className="flex items-center gap-2 text-xs font-bold text-brand font-spartan">
+                  <Zap size={15} className="text-brand shrink-0" />
+                  <span>OTOMATISASI DATA ALUR KERJA</span>
                 </div>
-
-                <div className="flex items-start gap-3 p-3 rounded-lg bg-brand/5 border border-brand/10">
-                  <ShieldCheck className="h-5 w-5 text-brand shrink-0 mt-0.5" />
-                  <div>
-                    <h4 className="text-xs font-bold text-brand font-spartan uppercase">Pendampingan & Garansi</h4>
-                    <p className="text-[12px] text-foreground/70">Bimbingan bimtek & maintenance terjamin.</p>
-                  </div>
+                <div className="flex items-center gap-2 text-xs font-bold text-brand font-spartan">
+                  <ShieldCheck size={15} className="text-brand shrink-0" />
+                  <span>KONTROL PADA TIM MANDIRI</span>
                 </div>
               </div>
             </div>
 
-            {/* Bottom Card Footer */}
-            <div className="mt-8 pt-4 border-t border-brand/10 flex items-center justify-between text-xs font-bold text-foreground/60 font-spartan">
-              <span>SOLUSI IT TERINTEGRASI</span>
-              <a href="#layanan" className="text-brand hover:underline flex items-center gap-1">
-                LAYANAN →
-              </a>
+            {/* Bottom Status */}
+            <div className="mt-10 pt-4 border-t border-brand/20 flex items-center justify-between text-[10px] font-bold tracking-widest text-brand uppercase font-spartan">
+              <span>EXPLORE MORE</span>
+              <span className="animate-pulse">SCROLL DOWN ↓</span>
             </div>
           </div>
 
@@ -238,53 +208,64 @@ function HeroSection() {
   );
 }
 
-// SEKSI 02: TENTANG KAMI
+// SEKSI 02: TENTANG KAMI (Modul 02 Editorial)
 function AboutSection() {
   return (
-    <section id="tentang-kami" className="relative border-b border-brand/10 bg-background py-20 lg:py-24 scroll-mt-20 overflow-hidden">
+    <section id="tentang-kami" className="relative border-b border-brand/15 bg-background py-20 lg:py-28 scroll-mt-20 overflow-hidden">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
-        <div className="grid lg:grid-cols-12 gap-10 items-center">
+        <div className="grid lg:grid-cols-12 gap-8 items-center">
           
-          {/* Kolom Kiri: Teks & Visi */}
-          <div className="lg:col-span-6">
-            <span className="text-xs font-extrabold tracking-widest text-brand font-spartan uppercase block mb-2">
-              #02 TENTANG IMPERIUM STUDIO
-            </span>
-            <h2 className="text-4xl sm:text-5xl font-black uppercase text-brand tracking-tighter leading-tight font-spartan">
-              KEDAULATAN DIGITAL UNTUK BISNIS ANDA.
-            </h2>
-            
-            <p className="mt-6 text-sm sm:text-base leading-relaxed text-foreground/80 font-medium">
-              Kami percaya bahwa teknologi terbaik adalah teknologi yang mudah digunakan dan memberikan kendali penuh kepada pemilik bisnis.
-            </p>
-
-            <div className="mt-8 grid sm:grid-cols-2 gap-4">
-              <div className="p-4 rounded-xl border border-brand/15 bg-card">
-                <CheckCircle2 className="h-6 w-6 text-brand mb-2" />
-                <h3 className="font-bold text-sm text-brand font-spartan uppercase">Otomatisasi Data</h3>
-                <p className="text-xs text-foreground/70 mt-1">Mengurangi pekerjaan manual yang berulang secara efektif.</p>
+          {/* Sisi Kiri: Modul 02 & Text */}
+          <div className="lg:col-span-5 relative flex flex-col justify-between">
+            <div>
+              <div className="flex items-center gap-3 text-xs font-bold tracking-widest text-brand font-spartan uppercase pb-3 border-b border-brand/15 mb-6">
+                <span>SECTOR / ABOUT US</span>
+                <span className="ml-auto font-black text-lg">02</span>
               </div>
-              <div className="p-4 rounded-xl border border-brand/15 bg-card">
-                <CheckCircle2 className="h-6 w-6 text-brand mb-2" />
-                <h3 className="font-bold text-sm text-brand font-spartan uppercase">Kemudahan Kelola</h3>
-                <p className="text-xs text-foreground/70 mt-1">Sistem dirancang intuitif untuk dapat dikelola tim mandiri.</p>
+
+              <p className="text-xs font-bold uppercase tracking-wider text-foreground/50 font-spartan">
+                FOKUS UTAMA
+              </p>
+              <h3 className="mt-1 text-2xl font-black text-brand font-spartan uppercase tracking-tight">
+                Integrasi & Kedaulatan Digital
+              </h3>
+              
+              <div className="mt-6 space-y-4 text-sm leading-relaxed text-foreground/80 font-medium">
+                <p>
+                  Imperium Studio berfokus merancang dan mengintegrasikan sistem digital sesuai alur kerja bisnis Anda secara efisien, transparan, dan akurat.
+                </p>
+                <p>
+                  Tujuan kami adalah membantu perusahaan Anda meraih kedaulatan digital dengan kendali penuh atas sistem dan data mandiri.
+                </p>
+              </div>
+
+              <div className="mt-8 space-y-2">
+                <div className="flex items-center gap-2 text-xs font-bold text-brand font-spartan">
+                  <CheckCircle2 size={16} /> <span>ALUR KERJA INTUITIF</span>
+                </div>
+                <div className="flex items-center gap-2 text-xs font-bold text-brand font-spartan">
+                  <CheckCircle2 size={16} /> <span>BEBAS BIAYA TERSEMBUNYI</span>
+                </div>
               </div>
             </div>
           </div>
 
-          {/* Kolom Kanan: Foto Tim dengan Frame Stylized */}
-          <div className="lg:col-span-6 flex justify-center">
-            <div className="relative w-full max-w-md">
-              <div className="aspect-square w-full overflow-hidden rounded-2xl border-2 border-brand/20 shadow-2xl bg-card">
-                <img
-                  src={aboutTeam}
-                  alt="Tim Imperium Studio"
-                  className="h-full w-full object-cover"
-                />
-              </div>
-              <div className="absolute -bottom-5 -left-5 bg-brand text-brand-foreground px-6 py-4 rounded-xl shadow-lg border border-white/20">
-                <p className="text-2xl font-black font-spartan">100%</p>
-                <p className="text-[10px] font-bold tracking-widest uppercase font-spartan opacity-90">Dedikasi Solusi</p>
+          {/* Sisi Kanan: Giant Typography & Image */}
+          <div className="lg:col-span-7 relative flex flex-col items-end">
+            <h2 className="text-5xl sm:text-7xl lg:text-8xl font-black uppercase text-brand tracking-tighter leading-[0.88] font-spartan text-right w-full">
+              KEDAULATAN<br />
+              DIGITAL.
+            </h2>
+
+            {/* Overlapping Photo Frame */}
+            <div className="relative mt-8 w-full max-w-xl shadow-2xl border-4 border-background overflow-hidden rounded-sm group">
+              <img
+                src={aboutTeam}
+                alt="Tim Imperium Studio"
+                className="h-72 w-full object-cover filter contrast-[1.05] transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute bottom-4 left-4 bg-background/90 px-4 py-2 text-[10px] font-extrabold uppercase tracking-widest text-brand font-spartan backdrop-blur-sm border border-brand/10">
+                PONTIANAK, INDONESIA
               </div>
             </div>
           </div>
@@ -295,65 +276,55 @@ function AboutSection() {
   );
 }
 
-// SEKSI 03: LAYANAN (Bento Grid Interaktif)
+// SEKSI 03: LAYANAN (Modul 03 Editorial Grid)
 function ServicesSection() {
   return (
-    <section id="layanan" className="relative border-b border-brand/10 bg-muted/30 py-20 lg:py-24 scroll-mt-20 overflow-hidden">
+    <section id="layanan" className="relative border-b border-brand/15 bg-background py-20 lg:py-28 scroll-mt-20 overflow-hidden">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         
         {/* Header Seksi */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-10 border-b border-brand/15">
-          <div>
-            <span className="text-xs font-extrabold tracking-widest text-brand font-spartan uppercase block mb-2">
-              #03 PENGEMBANGAN & PENDAMPINGAN
+        <div className="grid lg:grid-cols-12 gap-8 items-end pb-10 border-b border-brand/15">
+          <div className="lg:col-span-8">
+            <span className="text-xs font-bold tracking-widest uppercase text-foreground/50 font-spartan block mb-2">
+              // SOLUSI & KAPABILITAS
             </span>
-            <h2 className="text-4xl sm:text-5xl font-black uppercase text-brand tracking-tighter font-spartan">
-              LAYANAN UTAMA.
+            <h2 className="text-5xl sm:text-7xl lg:text-8xl font-black uppercase text-brand tracking-tighter leading-[0.88] font-spartan">
+              LAYANAN<br />
+              UTAMA.
             </h2>
           </div>
-          <p className="max-w-md text-sm text-foreground/75 leading-relaxed font-medium">
-            Solusi pengembangan sistem modern dan dukungan IT komprehensif tanpa biaya tersembunyi.
-          </p>
+          
+          <div className="lg:col-span-4 flex justify-end">
+            <span className="text-6xl font-black text-brand/20 font-spartan">03</span>
+          </div>
         </div>
 
-        {/* Bento Grid Layout Cards */}
-        <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* Editorial Cards Grid */}
+        <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((s) => (
             <div
               key={s.num}
-              className="group relative flex flex-col justify-between rounded-2xl border border-brand/15 bg-card p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand/40 hover:shadow-xl"
+              className="group relative flex flex-col justify-between border border-brand/20 bg-card p-6 transition-all duration-300 hover:bg-brand hover:text-brand-foreground hover:shadow-xl hover:-translate-y-1"
             >
               <div>
-                <div className="flex items-center justify-between">
-                  <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand/10 text-brand group-hover:bg-brand group-hover:text-white transition-colors">
-                    <s.icon size={20} />
+                <div className="flex items-center justify-between text-xs font-black font-spartan">
+                  <span className="px-2.5 py-1 bg-brand/10 group-hover:bg-white/20 group-hover:text-white text-brand rounded-none tracking-widest">
+                    #{s.tag}
                   </span>
-                  <span className="font-spartan text-xl font-black text-brand/30 group-hover:text-brand">
-                    {s.num}
-                  </span>
+                  <span className="text-2xl font-black opacity-30 group-hover:opacity-100">{s.num}</span>
                 </div>
 
-                <h3 className="mt-6 text-lg font-bold text-brand font-spartan uppercase leading-snug">
+                <h3 className="mt-8 text-lg font-extrabold font-spartan uppercase tracking-tight group-hover:text-white">
                   {s.title}
                 </h3>
-                <p className="mt-3 text-xs leading-relaxed text-foreground/75">
+                <p className="mt-3 text-xs leading-relaxed opacity-75 group-hover:opacity-90">
                   {s.desc}
                 </p>
-
-                {/* Highlight Badges */}
-                <div className="mt-6 space-y-2">
-                  {s.highlights.map((h) => (
-                    <div key={h} className="flex items-center gap-2 text-[11px] font-semibold text-foreground/80">
-                      <span className="h-1.5 w-1.5 rounded-full bg-brand" />
-                      <span>{h}</span>
-                    </div>
-                  ))}
-                </div>
               </div>
 
-              <div className="mt-8 pt-4 border-t border-border text-[10px] font-bold tracking-widest text-brand uppercase font-spartan flex items-center justify-between">
+              <div className="mt-8 pt-4 border-t border-brand/10 group-hover:border-white/20 text-[10px] font-extrabold tracking-widest uppercase font-spartan flex items-center justify-between">
                 <span>IMPERIUM SERVICE</span>
-                <span className="opacity-0 group-hover:opacity-100 transition-opacity">→</span>
+                <span className="group-hover:translate-x-1 transition-transform">→</span>
               </div>
             </div>
           ))}
@@ -364,43 +335,46 @@ function ServicesSection() {
   );
 }
 
-// SEKSI 04: ANGGOTA TIM
+// SEKSI 04: ANGGOTA TIM (Modul 04 Editorial)
 function TeamSection() {
   return (
-    <section id="anggota" className="relative border-b border-brand/10 bg-background py-20 lg:py-24 scroll-mt-20 overflow-hidden">
+    <section id="anggota" className="relative border-b border-brand/15 bg-background py-20 lg:py-28 scroll-mt-20 overflow-hidden">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-10 border-b border-brand/15">
           <div>
-            <span className="text-xs font-extrabold tracking-widest text-brand font-spartan uppercase block mb-2">
-              #04 TIM PROFESIONAL
+            <span className="text-xs font-bold tracking-widest uppercase text-foreground/50 font-spartan block mb-2">
+              // TALENTA TERBAIK — 04
             </span>
-            <h2 className="text-4xl sm:text-5xl font-black uppercase text-brand tracking-tighter font-spartan">
-              ANGGOTA TIM.
+            <h2 className="text-4xl sm:text-6xl font-black uppercase text-brand tracking-tighter font-spartan">
+              TIM KREATIF
             </h2>
           </div>
-          <p className="text-xs font-extrabold uppercase tracking-widest text-brand font-spartan bg-brand/5 px-4 py-2 rounded-full border border-brand/10">
-            7 TALENTA DEDIKATIF
+          <p className="text-xs font-bold uppercase tracking-widest text-brand font-spartan bg-brand/5 px-4 py-2 border border-brand/15">
+            [ 7 ANGGOTA DEDIKATIF ]
           </p>
         </div>
 
-        {/* Card Grid Anggota Tim */}
-        <div className="mt-10 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
-          {members.map((m) => (
-            <div key={m.name} className="group relative rounded-2xl border border-brand/15 bg-card overflow-hidden shadow-sm transition-all hover:shadow-md">
+        {/* Member Cards */}
+        <div className="mt-12 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+          {members.map((m, idx) => (
+            <div key={m.name} className="group relative border border-brand/20 bg-card overflow-hidden">
               <div className="aspect-square w-full overflow-hidden bg-muted">
                 <img
                   src={m.img}
                   alt={m.name}
                   loading="lazy"
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="h-full w-full object-cover filter contrast-[1.05] grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500"
                 />
               </div>
-              <div className="p-4 bg-card border-t border-brand/10">
-                <p className="font-extrabold text-sm text-brand font-spartan uppercase tracking-tight">
+              <div className="p-4 bg-background border-t border-brand/15">
+                <span className="text-[10px] font-bold text-foreground/40 font-spartan block">
+                  0{idx + 1} //
+                </span>
+                <p className="font-extrabold text-sm text-brand font-spartan uppercase tracking-tight mt-0.5">
                   {m.name}
                 </p>
-                <p className="text-xs text-foreground/70 font-medium mt-0.5">
+                <p className="text-xs text-foreground/70 font-medium mt-1">
                   {m.role}
                 </p>
               </div>
@@ -413,34 +387,32 @@ function TeamSection() {
   );
 }
 
-// SEKSI 05: KONTAK & FOOTER
+// SEKSI 05: KONTAK & FOOTER (Modul 05 Dark Editorial)
 function ContactSection() {
   return (
-    <section id="kontak" className="relative bg-brand text-brand-foreground py-20 lg:py-24 scroll-mt-20 overflow-hidden">
+    <section id="kontak" className="relative bg-brand text-brand-foreground py-20 lg:py-28 scroll-mt-20 overflow-hidden">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         
         <div className="grid lg:grid-cols-12 gap-12 items-center">
           
-          {/* Sisi Kiri: Informasi Kontak */}
+          {/* Sisi Kiri: Header & Details */}
           <div className="lg:col-span-7">
-            <span className="text-xs font-extrabold tracking-widest uppercase opacity-75 font-spartan block mb-2">
-              #05 MARI BEKERJA SAMA
+            <span className="text-xs font-bold tracking-widest uppercase opacity-60 font-spartan block mb-2">
+              // MARI BEKERJA SAMA — 05
             </span>
-            <h2 className="text-4xl sm:text-6xl font-black uppercase tracking-tighter leading-tight font-spartan">
-              INFORMASI KONTAK.
+            <h2 className="text-5xl sm:text-7xl font-black uppercase tracking-tighter leading-[0.88] font-spartan">
+              HUBUNGI<br />
+              KAMI.
             </h2>
-            <p className="mt-4 text-sm opacity-90 max-w-md">
-              Siap melangkah ke tahap berikutnya? Hubungi kami untuk konsultasi awal mengenai kebutuhan otomatisasi bisnis Anda.
-            </p>
 
-            <div className="mt-10 space-y-5 max-w-lg">
+            <div className="mt-12 space-y-5 max-w-lg">
               {contactItems.map((item) => (
-                <div key={item.label} className="flex items-center gap-4 p-4 rounded-xl bg-white/10 border border-white/15 backdrop-blur-sm">
-                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-white text-brand">
-                    <item.icon size={20} />
+                <div key={item.label} className="flex items-center gap-4 pb-4 border-b border-white/15">
+                  <div className="flex h-10 w-10 items-center justify-center bg-white/10 text-white">
+                    <item.icon size={18} />
                   </div>
                   <div>
-                    <span className="block text-[10px] uppercase tracking-widest font-bold opacity-75 font-spartan">
+                    <span className="block text-[10px] uppercase tracking-widest font-bold opacity-60 font-spartan">
                       {item.label}
                     </span>
                     <span className="block text-base font-extrabold font-spartan tracking-tight">
@@ -452,30 +424,29 @@ function ContactSection() {
             </div>
           </div>
 
-          {/* Sisi Kanan: Foto Kontak Manager */}
+          {/* Sisi Kanan: Manager Frame */}
           <div className="lg:col-span-5 flex justify-center">
-            <div className="relative w-full max-w-md rounded-2xl border-4 border-white/20 shadow-2xl overflow-hidden bg-white/5">
+            <div className="relative w-full max-w-md border-4 border-white shadow-2xl overflow-hidden bg-white/5">
               <img
                 src={jesika}
                 alt="Jesika Tan Kontak Utama"
-                className="w-full aspect-[4/5] object-cover"
+                className="w-full aspect-[4/5] object-cover filter contrast-[1.05]"
               />
-              <div className="absolute bottom-0 inset-x-0 bg-brand/90 p-5 backdrop-blur-md border-t border-white/20">
-                <p className="text-xs font-bold uppercase tracking-widest font-spartan opacity-80">
+              <div className="absolute bottom-0 inset-x-0 bg-brand/90 p-4 backdrop-blur-md border-t border-white/20">
+                <p className="text-xs font-bold uppercase tracking-widest font-spartan">
                   PROJECT MANAGER
                 </p>
-                <p className="text-xl font-black font-spartan">Jesika Tan</p>
+                <p className="text-lg font-black font-spartan">Jesika Tan</p>
               </div>
             </div>
           </div>
 
         </div>
 
-        {/* Footer Minimalis (Tulisan IMPERIUM STUDIO Serba Putih) */}
+        {/* Footer Minimalis Editorial - Tulisan Logo Serba Putih */}
         <div className="mt-20 pt-8 border-t border-white/20 flex flex-col sm:flex-row items-center justify-between text-xs font-bold tracking-widest uppercase font-spartan gap-4">
-          {/* Memakai prop light={true} agar teks logo berwarna putih penuh */}
           <Logo light={true} />
-          <span className="opacity-80">© {new Date().getFullYear()} IMPERIUM STUDIO. ALL RIGHTS RESERVED.</span>
+          <span>© {new Date().getFullYear()} IMPERIUM STUDIO. ALL RIGHTS RESERVED.</span>
         </div>
 
       </div>
