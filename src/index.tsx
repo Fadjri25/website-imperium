@@ -72,7 +72,7 @@ function Logo({ className = "" }: { className?: string }) {
     <span className={`inline-flex items-center gap-0.5 leading-none ${className}`}>
       <img src={mark} alt="Imperium Studio" className="h-8 w-auto object-contain" />
       <span className="inline-flex items-center text-xl font-extrabold tracking-tight font-spartan">
-        <span className="-ml-1 text-brand">perium</span>
+        <span className="text-brand">perium</span>
         <span className="ml-1 text-xs font-extrabold tracking-wider text-foreground/70">STUDIO</span>
       </span>
     </span>
