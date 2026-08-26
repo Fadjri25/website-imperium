@@ -102,10 +102,10 @@ function Navbar() {
 
 function HeroSection() {
   return (
-    <section id="beranda" className="relative overflow-hidden bg-background scroll-mt-20">
-      <div className="grid items-center gap-6 lg:grid-cols-2">
+    <section id="beranda" className="relative flex min-h-[calc(100vh-60px)] items-center overflow-hidden bg-background scroll-mt-20">
+      <div className="grid w-full items-center gap-6 lg:grid-cols-2">
         <div
-          className="relative isolate overflow-hidden py-16 pr-12 pl-5 sm:py-20 sm:pl-10 lg:py-32 lg:pr-32 lg:pl-16"
+          className="relative isolate flex min-h-[500px] items-center overflow-hidden py-20 pr-12 pl-5 sm:py-24 sm:pl-10 lg:min-h-[620px] lg:py-36 lg:pr-32 lg:pl-16"
           style={{
             borderTopRightRadius: "55% 100%",
             borderBottomRightRadius: "55% 100%",
@@ -139,7 +139,7 @@ function HeroSection() {
             alt="Logo Imperium Studio"
             width={420}
             height={420}
-            className="h-72 w-72 object-contain sm:h-80 sm:w-80 lg:h-[420px] lg:w-[420px]"
+            className="h-72 w-72 object-contain sm:h-80 sm:w-80 lg:h-[450px] lg:w-[450px]"
           />
         </div>
       </div>
@@ -149,7 +149,7 @@ function HeroSection() {
 
 function AboutSection() {
   return (
-    <section id="tentang-kami" className="mx-auto max-w-7xl px-5 py-16 sm:px-8 scroll-mt-20">
+    <section id="tentang-kami" className="mx-auto max-w-7xl px-5 py-24 sm:px-8 scroll-mt-20">
       <div className="grid items-center gap-12 lg:grid-cols-2">
         <div>
           <h2 className="text-3xl font-extrabold text-brand sm:text-4xl font-spartan">Tentang Kami</h2>
@@ -187,7 +187,7 @@ function AboutSection() {
 
 function ServicesSection() {
   return (
-    <section id="layanan" className="bg-brand-soft/60 py-16 scroll-mt-20">
+    <section id="layanan" className="bg-brand-soft/60 py-24 scroll-mt-20">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <h2 className="text-center text-3xl font-extrabold text-brand sm:text-4xl font-spartan">
           Layanan Yang Ditawarkan
@@ -213,7 +213,7 @@ function ServicesSection() {
 
 function TeamSection() {
   return (
-    <section id="anggota" className="mx-auto max-w-7xl px-5 py-16 sm:px-8 scroll-mt-20">
+    <section id="anggota" className="mx-auto max-w-7xl px-5 py-24 sm:px-8 scroll-mt-20">
       <h2 className="text-3xl font-extrabold text-brand sm:text-4xl font-spartan">Mengenal Tim Kami</h2>
       <p className="mt-3 text-lg text-foreground/80">
         Di Balik Setiap Solusi Digital, Ada Tim yang Berdedikasi.
@@ -240,7 +240,7 @@ function TeamSection() {
 
 function ContactSection() {
   return (
-    <section id="kontak" className="relative overflow-hidden py-16 scroll-mt-20">
+    <section id="kontak" className="relative overflow-hidden py-24 scroll-mt-20">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <h2 className="text-3xl font-extrabold text-brand sm:text-4xl font-spartan">Informasi Kontak</h2>
         <div className="mt-10 grid items-center gap-10 lg:grid-cols-2">
