@@ -5,8 +5,6 @@ import {
   MapPin,
   ArrowRight,
   Sparkles,
-  Zap,
-  ShieldCheck,
   CheckCircle2,
 } from "lucide-react";
 
@@ -77,7 +75,6 @@ const contactItems = [
 function Logo({ className = "", light = false }: { className?: string; light?: boolean }) {
   return (
     <a href="#beranda" className={`inline-flex items-center gap-0.5 group cursor-pointer ${className}`}>
-      {/* Icon im menempel rapat dan berubah putih penuh di footer saat light={true} */}
       <img
         src={mark}
         alt="Imperium Studio Logo"
@@ -85,7 +82,6 @@ function Logo({ className = "", light = false }: { className?: string; light?: b
           light ? "brightness-0 invert" : ""
         }`}
       />
-      {/* Teks disesuaikan translate-y-[1px] agar sejajar sempurna di tengah icon */}
       <span className="inline-flex items-center gap-1.5 text-base sm:text-lg font-black tracking-widest uppercase font-spartan translate-y-[1px]">
         <span className={light ? "text-white" : "text-brand"}>PERIUM</span>
         <span className={light ? "text-white" : "text-foreground font-black"}>STUDIO</span>
@@ -116,13 +112,12 @@ function Navbar() {
   );
 }
 
-// SEKSI 01: HERO / BERANDA (Desain Editorial Dinamis + Penomoran 01 Seragam)
+// SEKSI 01: HERO / BERANDA
 function HeroSection() {
   return (
     <section id="beranda" className="relative border-b border-brand/15 bg-background py-16 lg:py-24 scroll-mt-20 overflow-hidden">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         
-        {/* Header Seksi Beranda dengan Nomor 01 Seragam */}
         <div className="grid lg:grid-cols-12 gap-6 items-end pb-8 border-b border-brand/15 mb-10">
           <div className="lg:col-span-8">
             <div className="inline-flex items-center gap-2 text-xs font-extrabold tracking-widest uppercase text-brand font-spartan">
@@ -139,7 +134,6 @@ function HeroSection() {
 
         <div className="grid lg:grid-cols-12 gap-10 items-stretch">
           
-          {/* Sisi Kiri: Editorial Hero Text & Foto Utama */}
           <div className="lg:col-span-7 flex flex-col justify-between">
             <div>
               <h1 className="text-5xl sm:text-7xl lg:text-8xl font-black uppercase text-brand tracking-tighter leading-[0.88] font-spartan">
@@ -151,7 +145,6 @@ function HeroSection() {
               </p>
             </div>
 
-            {/* Frame Foto Utama dengan Visual Tag */}
             <div className="relative mt-8 group w-full max-w-2xl">
               <div className="relative aspect-[16/9] w-full overflow-hidden rounded-sm shadow-xl border-2 border-brand/20 bg-card">
                 <img
@@ -171,7 +164,6 @@ function HeroSection() {
               </div>
             </div>
 
-            {/* CTA Button */}
             <div className="mt-8">
               <a
                 href="#tentang-kami"
@@ -182,7 +174,6 @@ function HeroSection() {
             </div>
           </div>
 
-          {/* Sisi Kanan: Editorial Column / Intro (Bebas dari Kesan Card AI) */}
           <div className="lg:col-span-5 flex flex-col justify-between border-l-0 lg:border-l border-brand/15 lg:pl-10 pt-6 lg:pt-0">
             <div>
               <span className="text-xs font-extrabold tracking-widest text-foreground/50 font-spartan uppercase block mb-3">
@@ -196,7 +187,6 @@ function HeroSection() {
                 Kami membantu organisasi beralih dari proses manual yang lambat menuju otomatisasi terstruktur tanpa perlu ketergantungan penuh pada pihak luar.
               </p>
 
-              {/* Feature Points dengan Style Minimalis Editorial */}
               <div className="mt-8 space-y-4">
                 <div className="flex items-start gap-3">
                   <div className="flex h-7 w-7 shrink-0 items-center justify-center bg-brand/10 text-brand font-black text-xs font-spartan">
@@ -234,13 +224,12 @@ function HeroSection() {
   );
 }
 
-// SEKSI 02: TENTANG KAMI (Penomoran 02 Seragam)
+// SEKSI 02: TENTANG KAMI
 function AboutSection() {
   return (
     <section id="tentang-kami" className="relative border-b border-brand/15 bg-background py-20 lg:py-28 scroll-mt-20 overflow-hidden">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         
-        {/* Header Seksi dengan Nomor 02 Seragam */}
         <div className="grid lg:grid-cols-12 gap-6 items-end pb-8 border-b border-brand/15 mb-10">
           <div className="lg:col-span-8">
             <span className="text-xs font-bold tracking-widest uppercase text-foreground/50 font-spartan block mb-1">
@@ -259,7 +248,6 @@ function AboutSection() {
 
         <div className="grid lg:grid-cols-12 gap-8 items-center">
           
-          {/* Sisi Kiri: Deskripsi & Keunggulan */}
           <div className="lg:col-span-5 relative flex flex-col justify-between">
             <div>
               <h3 className="text-2xl font-black text-brand font-spartan uppercase tracking-tight">
@@ -286,7 +274,6 @@ function AboutSection() {
             </div>
           </div>
 
-          {/* Sisi Kanan: Typography Raksasa & Overlapping Photo */}
           <div className="lg:col-span-7 relative flex flex-col items-end">
             <h2 className="text-5xl sm:text-7xl lg:text-8xl font-black uppercase text-brand tracking-tighter leading-[0.88] font-spartan text-right w-full">
               KEDAULATAN<br />
@@ -311,13 +298,12 @@ function AboutSection() {
   );
 }
 
-// SEKSI 03: LAYANAN (Penomoran 03 Seragam)
+// SEKSI 03: LAYANAN
 function ServicesSection() {
   return (
     <section id="layanan" className="relative border-b border-brand/15 bg-background py-20 lg:py-28 scroll-mt-20 overflow-hidden">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         
-        {/* Header Seksi dengan Nomor 03 Seragam */}
         <div className="grid lg:grid-cols-12 gap-8 items-end pb-8 border-b border-brand/15">
           <div className="lg:col-span-8">
             <span className="text-xs font-bold tracking-widest uppercase text-foreground/50 font-spartan block mb-2">
@@ -336,7 +322,6 @@ function ServicesSection() {
           </div>
         </div>
 
-        {/* Editorial Cards Grid */}
         <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((s) => (
             <div
@@ -372,13 +357,12 @@ function ServicesSection() {
   );
 }
 
-// SEKSI 04: ANGGOTA TIM (Penomoran 04 Seragam)
+// SEKSI 04: ANGGOTA TIM
 function TeamSection() {
   return (
     <section id="anggota" className="relative border-b border-brand/15 bg-background py-20 lg:py-28 scroll-mt-20 overflow-hidden">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         
-        {/* Header Seksi dengan Nomor 04 Seragam */}
         <div className="grid lg:grid-cols-12 gap-8 items-end pb-8 border-b border-brand/15">
           <div className="lg:col-span-8">
             <span className="text-xs font-bold tracking-widest uppercase text-foreground/50 font-spartan block mb-2">
@@ -395,7 +379,6 @@ function TeamSection() {
           </div>
         </div>
 
-        {/* Member Cards Grid */}
         <div className="mt-12 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
           {members.map((m, idx) => (
             <div key={m.name} className="group relative border border-brand/20 bg-card overflow-hidden">
@@ -427,13 +410,12 @@ function TeamSection() {
   );
 }
 
-// SEKSI 05: KONTAK & FOOTER (Penomoran 05 Seragam + Footer Full White Logo)
+// SEKSI 05: KONTAK & FOOTER
 function ContactSection() {
   return (
     <section id="kontak" className="relative bg-brand text-brand-foreground py-20 lg:py-28 scroll-mt-20 overflow-hidden">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         
-        {/* Header Seksi Kontak dengan Nomor 05 Seragam */}
         <div className="grid lg:grid-cols-12 gap-8 items-end pb-8 border-b border-white/15 mb-12">
           <div className="lg:col-span-8">
             <span className="text-xs font-bold tracking-widest uppercase opacity-60 font-spartan block mb-2">
@@ -453,7 +435,6 @@ function ContactSection() {
 
         <div className="grid lg:grid-cols-12 gap-12 items-center">
           
-          {/* Sisi Kiri: Detail Kontak */}
           <div className="lg:col-span-7">
             <div className="space-y-5 max-w-lg">
               {contactItems.map((item) => (
@@ -474,7 +455,6 @@ function ContactSection() {
             </div>
           </div>
 
-          {/* Sisi Kanan: Manager Photo Frame */}
           <div className="lg:col-span-5 flex justify-center">
             <div className="relative w-full max-w-md border-4 border-white shadow-2xl overflow-hidden bg-white/5">
               <img
@@ -493,7 +473,6 @@ function ContactSection() {
 
         </div>
 
-        {/* Footer Minimalis Editorial - Logo & Icon Serba Putih Clean */}
         <div className="mt-20 pt-8 border-t border-white/20 flex flex-col sm:flex-row items-center justify-between text-xs font-bold tracking-widest uppercase font-spartan gap-4">
           <Logo light={true} />
           <span>© {new Date().getFullYear()} IMPERIUM STUDIO. ALL RIGHTS RESERVED.</span>
