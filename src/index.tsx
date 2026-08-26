@@ -162,7 +162,6 @@ function HeroSection() {
   );
 }
 
-{/* Banner Tipografi Tanpa Background - Full-width mentok dari kiri ke kanan */}
 function ImperiumBanner() {
   return (
     <div className="w-full overflow-hidden bg-background py-10 sm:py-16 lg:py-20 select-none text-brand">
@@ -195,18 +194,13 @@ function AboutSection() {
           <h2 className="text-3xl font-extrabold text-brand sm:text-4xl font-spartan">Tentang Kami</h2>
           <div className="mt-6 space-y-4 text-base leading-relaxed text-foreground/80">
             <p>
-              Imperium Studio adalah konsultan IT yang membantu organisasi merancang,
-              membangun, dan mengintegrasikan sistem digital yang benar-benar sesuai dengan
-              proses bisnis mereka.
+              Imperium Studio adalah konsultan IT yang berfokus merancang, membangun, dan mengintegrasikan sistem digital sesuai alur kerja bisnis Anda.
             </p>
             <p>
-              Kami percaya integrasi yang rapi adalah kunci: data yang terhubung, alur kerja
-              yang otomatis, dan laporan yang bisa dipercaya. Setiap solusi dibangun agar mudah
-              dirawat dan dikembangkan oleh tim internal Anda.
+              Melalui integrasi data yang terhubung, alur kerja otomatis, dan pelaporan yang akurat, kami memastikan setiap solusi mudah dikelola serta dikembangkan secara mandiri oleh tim Anda.
             </p>
             <p>
-              Tujuan akhirnya adalah kedaulatan digital — Anda memiliki penuh sistem, data, dan
-              masa depan teknologi bisnis Anda sendiri.
+              Komitmen kami adalah membantu Anda meraih kedaulatan digital agar memiliki kendali penuh atas sistem, data, dan arah teknologi bisnis Anda.
             </p>
           </div>
         </div>
