@@ -73,18 +73,20 @@ const contactItems = [
   { icon: MapPin, label: "Lokasi Kantor", value: "Pontianak, Kalimantan Barat" },
 ];
 
-// Logo Component - Sejajar, Presisi, Tanpa Spasi
+// Logo Component - Sejajar Presisi & Footer White Icon Fix
 function Logo({ className = "", light = false }: { className?: string; light?: boolean }) {
   return (
-    <a href="#beranda" className={`inline-flex items-center leading-none group cursor-pointer ${className}`}>
-      {/* Icon logo im menempel langsung tanpa spasi */}
+    <a href="#beranda" className={`inline-flex items-center gap-0.5 group cursor-pointer ${className}`}>
+      {/* Icon im menempel rapat dan berubah putih penuh di footer saat light={true} */}
       <img
         src={mark}
-        alt="Imperium Studio"
-        className="h-7 w-auto object-contain -mr-0.5 transition-transform group-hover:scale-105"
+        alt="Imperium Studio Logo"
+        className={`h-6 w-auto object-contain shrink-0 transition-transform group-hover:scale-105 ${
+          light ? "brightness-0 invert" : ""
+        }`}
       />
-      {/* PERIUM & STUDIO disamakan font, size, weight, dan alignments */}
-      <span className="inline-flex items-center gap-1.5 text-base sm:text-lg font-black tracking-widest uppercase font-spartan">
+      {/* Teks disesuaikan translate-y-[1px] agar sejajar sempurna di tengah icon */}
+      <span className="inline-flex items-center gap-1.5 text-base sm:text-lg font-black tracking-widest uppercase font-spartan translate-y-[1px]">
         <span className={light ? "text-white" : "text-brand"}>PERIUM</span>
         <span className={light ? "text-white" : "text-foreground font-black"}>STUDIO</span>
       </span>
@@ -114,39 +116,62 @@ function Navbar() {
   );
 }
 
-// SEKSI 01: HERO / BERANDA (Editorial Style + Clean Right Intro Box)
+// SEKSI 01: HERO / BERANDA (Desain Editorial Dinamis + Penomoran 01 Seragam)
 function HeroSection() {
   return (
     <section id="beranda" className="relative border-b border-brand/15 bg-background py-16 lg:py-24 scroll-mt-20 overflow-hidden">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
-        <div className="grid lg:grid-cols-12 gap-8 items-stretch">
+        
+        {/* Header Seksi Beranda dengan Nomor 01 Seragam */}
+        <div className="grid lg:grid-cols-12 gap-6 items-end pb-8 border-b border-brand/15 mb-10">
+          <div className="lg:col-span-8">
+            <div className="inline-flex items-center gap-2 text-xs font-extrabold tracking-widest uppercase text-brand font-spartan">
+              <Sparkles size={14} />
+              <span>IT CONSULTANT & SYSTEM AUTOMATION</span>
+            </div>
+          </div>
+          <div className="lg:col-span-4 flex justify-start lg:justify-end">
+            <span className="text-6xl sm:text-7xl font-black text-brand/20 font-spartan leading-none">
+              01
+            </span>
+          </div>
+        </div>
+
+        <div className="grid lg:grid-cols-12 gap-10 items-stretch">
           
-          {/* Sisi Kiri: Giant Editorial Typography & Photo */}
-          <div className="lg:col-span-8 relative flex flex-col justify-between">
+          {/* Sisi Kiri: Editorial Hero Text & Foto Utama */}
+          <div className="lg:col-span-7 flex flex-col justify-between">
             <div>
-              <div className="inline-flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-brand font-spartan mb-3">
-                <Sparkles size={14} />
-                <span>IMPERIUM STUDIO IT CONSULTANT</span>
-              </div>
               <h1 className="text-5xl sm:text-7xl lg:text-8xl font-black uppercase text-brand tracking-tighter leading-[0.88] font-spartan">
                 OTOMATISASI<br />
                 PINTAR.
               </h1>
+              <p className="mt-5 text-base leading-relaxed text-foreground/80 font-medium max-w-xl">
+                Akselerasi efisiensi bisnis Anda melalui integrasi sistem digital pintar yang dirancang presisi sesuai alur kerja perusahaan.
+              </p>
             </div>
 
-            {/* Overlapping Hero Image Frame */}
-            <div className="relative mt-8 z-10 w-full max-w-2xl group">
-              <div className="relative aspect-[16/9] w-full overflow-hidden rounded-sm shadow-2xl border-4 border-background bg-card">
+            {/* Frame Foto Utama dengan Visual Tag */}
+            <div className="relative mt-8 group w-full max-w-2xl">
+              <div className="relative aspect-[16/9] w-full overflow-hidden rounded-sm shadow-xl border-2 border-brand/20 bg-card">
                 <img
                   src={heroMeeting}
-                  alt="Tim Imperium Studio"
+                  alt="Tim Imperium Studio Berdiskusi"
                   className="h-full w-full object-cover filter contrast-[1.05] transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-brand/10 group-hover:bg-transparent transition-colors" />
+                <div className="absolute inset-0 bg-gradient-to-t from-brand/40 via-transparent to-transparent" />
+                <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-white">
+                  <span className="text-xs font-bold font-spartan tracking-wider uppercase">
+                    ✦ DIGITAL WORKFLOW INTEGRATION
+                  </span>
+                  <span className="text-[10px] bg-background/90 text-brand px-3 py-1 font-extrabold uppercase font-spartan">
+                    PONTIANAK HQ
+                  </span>
+                </div>
               </div>
             </div>
 
-            {/* Button CTA */}
+            {/* CTA Button */}
             <div className="mt-8">
               <a
                 href="#tentang-kami"
@@ -157,48 +182,49 @@ function HeroSection() {
             </div>
           </div>
 
-          {/* Sisi Kanan: Intro Card Bersih & Terstruktur (Tanpa bertimpa-timpa) */}
-          <div className="lg:col-span-4 flex flex-col justify-between border-2 border-brand/20 bg-brand/5 p-8 relative">
+          {/* Sisi Kanan: Editorial Column / Intro (Bebas dari Kesan Card AI) */}
+          <div className="lg:col-span-5 flex flex-col justify-between border-l-0 lg:border-l border-brand/15 lg:pl-10 pt-6 lg:pt-0">
             <div>
-              {/* Header Card Modul 01 */}
-              <div className="flex items-center justify-between pb-4 border-b border-brand/20">
-                <span className="text-xs font-black tracking-widest text-brand font-spartan uppercase">
-                  INTRO
-                </span>
-                <span className="text-2xl font-black text-brand font-spartan">
-                  01
-                </span>
-              </div>
+              <span className="text-xs font-extrabold tracking-widest text-foreground/50 font-spartan uppercase block mb-3">
+                // MITRA TEKNOLOGI ANDALAN
+              </span>
+              <h3 className="text-2xl font-black text-brand font-spartan uppercase leading-tight">
+                Membangun Kemandirian Sistem Digital Perusahaan
+              </h3>
+              
+              <p className="mt-4 text-sm leading-relaxed text-foreground/80 font-medium">
+                Kami membantu organisasi beralih dari proses manual yang lambat menuju otomatisasi terstruktur tanpa perlu ketergantungan penuh pada pihak luar.
+              </p>
 
-              <div className="mt-6">
-                <span className="text-[11px] font-bold tracking-wider text-foreground/50 uppercase font-spartan block mb-1">
-                  KAMI ADALAH
-                </span>
-                <h3 className="text-lg font-black text-brand font-spartan uppercase tracking-tight">
-                  Mitra Transformasi Digital
-                </h3>
-                <p className="mt-4 text-sm leading-relaxed text-foreground/80 font-medium">
-                  Konsultan IT tepercaya yang siap mendampingi modernisasi bisnis Anda melalui otomatisasi alur kerja dan integrasi sistem tingkat tinggi.
-                </p>
-              </div>
-
-              {/* Poin Keunggulan Ringkas */}
-              <div className="mt-8 space-y-3">
-                <div className="flex items-center gap-2 text-xs font-bold text-brand font-spartan">
-                  <Zap size={15} className="text-brand shrink-0" />
-                  <span>OTOMATISASI DATA ALUR KERJA</span>
+              {/* Feature Points dengan Style Minimalis Editorial */}
+              <div className="mt-8 space-y-4">
+                <div className="flex items-start gap-3">
+                  <div className="flex h-7 w-7 shrink-0 items-center justify-center bg-brand/10 text-brand font-black text-xs font-spartan">
+                    01
+                  </div>
+                  <div>
+                    <h4 className="text-xs font-bold text-brand font-spartan uppercase">Alur Kerja Disesuaikan 100%</h4>
+                    <p className="text-xs text-foreground/70 mt-0.5">Sistem dibangun khusus mengikuti proses operasional unik perusahaan Anda.</p>
+                  </div>
                 </div>
-                <div className="flex items-center gap-2 text-xs font-bold text-brand font-spartan">
-                  <ShieldCheck size={15} className="text-brand shrink-0" />
-                  <span>KONTROL PADA TIM MANDIRI</span>
+
+                <div className="flex items-start gap-3">
+                  <div className="flex h-7 w-7 shrink-0 items-center justify-center bg-brand/10 text-brand font-black text-xs font-spartan">
+                    02
+                  </div>
+                  <div>
+                    <h4 className="text-xs font-bold text-brand font-spartan uppercase">Dukungan & Pelatihan Mandiri</h4>
+                    <p className="text-xs text-foreground/70 mt-0.5">Tim Anda dibimbing hingga mahir mengoperasikan sistem sepenuhnya.</p>
+                  </div>
                 </div>
               </div>
             </div>
 
-            {/* Bottom Status */}
-            <div className="mt-10 pt-4 border-t border-brand/20 flex items-center justify-between text-[10px] font-bold tracking-widest text-brand uppercase font-spartan">
-              <span>EXPLORE MORE</span>
-              <span className="animate-pulse">SCROLL DOWN ↓</span>
+            <div className="mt-10 pt-4 border-t border-brand/15 flex items-center justify-between text-[11px] font-bold tracking-widest text-brand uppercase font-spartan">
+              <span>EXPLORE SERVICES</span>
+              <a href="#layanan" className="hover:underline flex items-center gap-1">
+                SELENGKAPNYA →
+              </a>
             </div>
           </div>
 
@@ -208,25 +234,35 @@ function HeroSection() {
   );
 }
 
-// SEKSI 02: TENTANG KAMI (Modul 02 Editorial)
+// SEKSI 02: TENTANG KAMI (Penomoran 02 Seragam)
 function AboutSection() {
   return (
     <section id="tentang-kami" className="relative border-b border-brand/15 bg-background py-20 lg:py-28 scroll-mt-20 overflow-hidden">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
+        
+        {/* Header Seksi dengan Nomor 02 Seragam */}
+        <div className="grid lg:grid-cols-12 gap-6 items-end pb-8 border-b border-brand/15 mb-10">
+          <div className="lg:col-span-8">
+            <span className="text-xs font-bold tracking-widest uppercase text-foreground/50 font-spartan block mb-1">
+              // SECTOR / ABOUT US
+            </span>
+            <span className="text-xs font-bold uppercase tracking-wider text-brand font-spartan">
+              VISI & FOKUS UTAMA
+            </span>
+          </div>
+          <div className="lg:col-span-4 flex justify-start lg:justify-end">
+            <span className="text-6xl sm:text-7xl font-black text-brand/20 font-spartan leading-none">
+              02
+            </span>
+          </div>
+        </div>
+
         <div className="grid lg:grid-cols-12 gap-8 items-center">
           
-          {/* Sisi Kiri: Modul 02 & Text */}
+          {/* Sisi Kiri: Deskripsi & Keunggulan */}
           <div className="lg:col-span-5 relative flex flex-col justify-between">
             <div>
-              <div className="flex items-center gap-3 text-xs font-bold tracking-widest text-brand font-spartan uppercase pb-3 border-b border-brand/15 mb-6">
-                <span>SECTOR / ABOUT US</span>
-                <span className="ml-auto font-black text-lg">02</span>
-              </div>
-
-              <p className="text-xs font-bold uppercase tracking-wider text-foreground/50 font-spartan">
-                FOKUS UTAMA
-              </p>
-              <h3 className="mt-1 text-2xl font-black text-brand font-spartan uppercase tracking-tight">
+              <h3 className="text-2xl font-black text-brand font-spartan uppercase tracking-tight">
                 Integrasi & Kedaulatan Digital
               </h3>
               
@@ -239,25 +275,24 @@ function AboutSection() {
                 </p>
               </div>
 
-              <div className="mt-8 space-y-2">
+              <div className="mt-8 space-y-2.5">
                 <div className="flex items-center gap-2 text-xs font-bold text-brand font-spartan">
-                  <CheckCircle2 size={16} /> <span>ALUR KERJA INTUITIF</span>
+                  <CheckCircle2 size={16} /> <span>ALUR KERJA INTUITIF & TERSTRUKTUR</span>
                 </div>
                 <div className="flex items-center gap-2 text-xs font-bold text-brand font-spartan">
-                  <CheckCircle2 size={16} /> <span>BEBAS BIAYA TERSEMBUNYI</span>
+                  <CheckCircle2 size={16} /> <span>TRANSPARANSI TANPA BIAYA TERSEMBUNYI</span>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Sisi Kanan: Giant Typography & Image */}
+          {/* Sisi Kanan: Typography Raksasa & Overlapping Photo */}
           <div className="lg:col-span-7 relative flex flex-col items-end">
             <h2 className="text-5xl sm:text-7xl lg:text-8xl font-black uppercase text-brand tracking-tighter leading-[0.88] font-spartan text-right w-full">
               KEDAULATAN<br />
               DIGITAL.
             </h2>
 
-            {/* Overlapping Photo Frame */}
             <div className="relative mt-8 w-full max-w-xl shadow-2xl border-4 border-background overflow-hidden rounded-sm group">
               <img
                 src={aboutTeam}
@@ -276,14 +311,14 @@ function AboutSection() {
   );
 }
 
-// SEKSI 03: LAYANAN (Modul 03 Editorial Grid)
+// SEKSI 03: LAYANAN (Penomoran 03 Seragam)
 function ServicesSection() {
   return (
     <section id="layanan" className="relative border-b border-brand/15 bg-background py-20 lg:py-28 scroll-mt-20 overflow-hidden">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         
-        {/* Header Seksi */}
-        <div className="grid lg:grid-cols-12 gap-8 items-end pb-10 border-b border-brand/15">
+        {/* Header Seksi dengan Nomor 03 Seragam */}
+        <div className="grid lg:grid-cols-12 gap-8 items-end pb-8 border-b border-brand/15">
           <div className="lg:col-span-8">
             <span className="text-xs font-bold tracking-widest uppercase text-foreground/50 font-spartan block mb-2">
               // SOLUSI & KAPABILITAS
@@ -294,8 +329,10 @@ function ServicesSection() {
             </h2>
           </div>
           
-          <div className="lg:col-span-4 flex justify-end">
-            <span className="text-6xl font-black text-brand/20 font-spartan">03</span>
+          <div className="lg:col-span-4 flex justify-start lg:justify-end">
+            <span className="text-6xl sm:text-7xl font-black text-brand/20 font-spartan leading-none">
+              03
+            </span>
           </div>
         </div>
 
@@ -335,27 +372,30 @@ function ServicesSection() {
   );
 }
 
-// SEKSI 04: ANGGOTA TIM (Modul 04 Editorial)
+// SEKSI 04: ANGGOTA TIM (Penomoran 04 Seragam)
 function TeamSection() {
   return (
     <section id="anggota" className="relative border-b border-brand/15 bg-background py-20 lg:py-28 scroll-mt-20 overflow-hidden">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-10 border-b border-brand/15">
-          <div>
+        {/* Header Seksi dengan Nomor 04 Seragam */}
+        <div className="grid lg:grid-cols-12 gap-8 items-end pb-8 border-b border-brand/15">
+          <div className="lg:col-span-8">
             <span className="text-xs font-bold tracking-widest uppercase text-foreground/50 font-spartan block mb-2">
-              // TALENTA TERBAIK — 04
+              // TALENTA TERBAIK
             </span>
             <h2 className="text-4xl sm:text-6xl font-black uppercase text-brand tracking-tighter font-spartan">
               TIM KREATIF
             </h2>
           </div>
-          <p className="text-xs font-bold uppercase tracking-widest text-brand font-spartan bg-brand/5 px-4 py-2 border border-brand/15">
-            [ 7 ANGGOTA DEDIKATIF ]
-          </p>
+          <div className="lg:col-span-4 flex justify-start lg:justify-end">
+            <span className="text-6xl sm:text-7xl font-black text-brand/20 font-spartan leading-none">
+              04
+            </span>
+          </div>
         </div>
 
-        {/* Member Cards */}
+        {/* Member Cards Grid */}
         <div className="mt-12 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
           {members.map((m, idx) => (
             <div key={m.name} className="group relative border border-brand/20 bg-card overflow-hidden">
@@ -387,28 +427,38 @@ function TeamSection() {
   );
 }
 
-// SEKSI 05: KONTAK & FOOTER (Modul 05 Dark Editorial)
+// SEKSI 05: KONTAK & FOOTER (Penomoran 05 Seragam + Footer Full White Logo)
 function ContactSection() {
   return (
     <section id="kontak" className="relative bg-brand text-brand-foreground py-20 lg:py-28 scroll-mt-20 overflow-hidden">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         
-        <div className="grid lg:grid-cols-12 gap-12 items-center">
-          
-          {/* Sisi Kiri: Header & Details */}
-          <div className="lg:col-span-7">
+        {/* Header Seksi Kontak dengan Nomor 05 Seragam */}
+        <div className="grid lg:grid-cols-12 gap-8 items-end pb-8 border-b border-white/15 mb-12">
+          <div className="lg:col-span-8">
             <span className="text-xs font-bold tracking-widest uppercase opacity-60 font-spartan block mb-2">
-              // MARI BEKERJA SAMA — 05
+              // MARI BEKERJA SAMA
             </span>
             <h2 className="text-5xl sm:text-7xl font-black uppercase tracking-tighter leading-[0.88] font-spartan">
               HUBUNGI<br />
               KAMI.
             </h2>
+          </div>
+          <div className="lg:col-span-4 flex justify-start lg:justify-end">
+            <span className="text-6xl sm:text-7xl font-black opacity-20 font-spartan leading-none">
+              05
+            </span>
+          </div>
+        </div>
 
-            <div className="mt-12 space-y-5 max-w-lg">
+        <div className="grid lg:grid-cols-12 gap-12 items-center">
+          
+          {/* Sisi Kiri: Detail Kontak */}
+          <div className="lg:col-span-7">
+            <div className="space-y-5 max-w-lg">
               {contactItems.map((item) => (
                 <div key={item.label} className="flex items-center gap-4 pb-4 border-b border-white/15">
-                  <div className="flex h-10 w-10 items-center justify-center bg-white/10 text-white">
+                  <div className="flex h-10 w-10 items-center justify-center bg-white/10 text-white shrink-0">
                     <item.icon size={18} />
                   </div>
                   <div>
@@ -424,7 +474,7 @@ function ContactSection() {
             </div>
           </div>
 
-          {/* Sisi Kanan: Manager Frame */}
+          {/* Sisi Kanan: Manager Photo Frame */}
           <div className="lg:col-span-5 flex justify-center">
             <div className="relative w-full max-w-md border-4 border-white shadow-2xl overflow-hidden bg-white/5">
               <img
@@ -443,7 +493,7 @@ function ContactSection() {
 
         </div>
 
-        {/* Footer Minimalis Editorial - Tulisan Logo Serba Putih */}
+        {/* Footer Minimalis Editorial - Logo & Icon Serba Putih Clean */}
         <div className="mt-20 pt-8 border-t border-white/20 flex flex-col sm:flex-row items-center justify-between text-xs font-bold tracking-widest uppercase font-spartan gap-4">
           <Logo light={true} />
           <span>© {new Date().getFullYear()} IMPERIUM STUDIO. ALL RIGHTS RESERVED.</span>
