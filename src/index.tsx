@@ -145,7 +145,7 @@ function HeroSection() {
           </div>
         </div>
 
-        {/* Kolom Kanan: Logo Brand (Ukuran Diperkecil & Clean) */}
+        {/* Kolom Kanan: Logo Brand */}
         <div className="relative flex items-center justify-center px-6 py-12 lg:py-0">
           <div className="relative flex items-center justify-center">
             <img
@@ -159,6 +159,17 @@ function HeroSection() {
         </div>
       </div>
     </section>
+  );
+}
+
+{/* Banner Tipografi Raksasa Antara Beranda & Tentang Kami */}
+function ImperiumBanner() {
+  return (
+    <div className="w-full overflow-hidden bg-brand py-6 sm:py-8 lg:py-10 shadow-inner">
+      <h2 className="w-full text-center text-[14.5vw] font-black leading-none tracking-tighter text-brand-foreground font-spartan uppercase select-none whitespace-nowrap">
+        IMPERIUM
+      </h2>
+    </div>
   );
 }
 
@@ -338,6 +349,7 @@ export default function Index() {
       <Navbar />
       <main>
         <HeroSection />
+        <ImperiumBanner />
         <AboutSection />
         <ServicesSection />
         <TeamSection />
