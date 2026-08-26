@@ -292,7 +292,7 @@ function Footer() {
           </p>
           <a
             href="#kontak"
-            className="mt-7 inline-flex items-center rounded-full bg-background px-7 py-3 text-sm font-semibold text-brand transition-transform hover:scale-105 font-spartan"
+            className="mt-8 inline-flex items-center justify-center rounded-full bg-white px-8 py-3.5 text-sm font-bold text-brand shadow-md hover:bg-gray-100 hover:shadow-lg transition-all cursor-pointer font-spartan"
           >
             Hubungi Kami
           </a>
