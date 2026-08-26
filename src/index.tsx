@@ -194,13 +194,13 @@ function AboutSection() {
           <h2 className="text-3xl font-extrabold text-brand sm:text-4xl font-spartan">Tentang Kami</h2>
           <div className="mt-6 space-y-4 text-base leading-relaxed text-foreground/80">
             <p>
-              Imperium Studio adalah konsultan IT yang berfokus merancang, membangun, dan mengintegrasikan sistem digital sesuai alur kerja bisnis Anda.
+              Imperium Studio adalah konsultan IT yang merancang dan mengintegrasikan sistem digital sesuai alur kerja bisnis Anda.
             </p>
             <p>
-              Melalui integrasi data yang terhubung, alur kerja otomatis, dan pelaporan yang akurat, kami memastikan setiap solusi mudah dikelola serta dikembangkan secara mandiri oleh tim Anda.
+              Kami berfokus pada otomatisasi data dan alur kerja yang efisien agar mudah dikelola mandiri oleh tim Anda.
             </p>
             <p>
-              Komitmen kami adalah membantu Anda meraih kedaulatan digital agar memiliki kendali penuh atas sistem, data, dan arah teknologi bisnis Anda.
+              Tujuan kami adalah membantu perusahaan Anda memiliki kendali penuh atas sistem dan teknologi masa depan.
             </p>
           </div>
         </div>
