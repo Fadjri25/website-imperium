@@ -3,10 +3,6 @@ import {
   Phone,
   Mail,
   MapPin,
-  Code2,
-  MessagesSquare,
-  GraduationCap,
-  Wrench,
 } from "lucide-react";
 
 import heroMeeting from "./assets/hero-meeting.jpg";
@@ -34,29 +30,6 @@ const footerLinks = [
   { label: "Layanan", href: "#layanan" },
   { label: "Anggota", href: "#anggota" },
   { label: "Kontak", href: "#kontak" },
-];
-
-const services = [
-  {
-    icon: Code2,
-    title: "Custom Software Development",
-    desc: "Pengembangan aplikasi web dan sistem internal yang dirancang khusus mengikuti alur kerja bisnis Anda.",
-  },
-  {
-    icon: MessagesSquare,
-    title: "Free IT & Business Consultation",
-    desc: "Sesi konsultasi gratis untuk memetakan kebutuhan teknologi dan prioritas digitalisasi perusahaan.",
-  },
-  {
-    icon: GraduationCap,
-    title: "Free Hands-on Training / Bimtek",
-    desc: "Pelatihan langsung bagi tim Anda agar sistem baru benar-benar dipakai dan dikuasai.",
-  },
-  {
-    icon: Wrench,
-    title: "Free Maintenance During Contract",
-    desc: "Perawatan, perbaikan, dan dukungan teknis tanpa biaya tambahan selama masa kontrak berjalan.",
-  },
 ];
 
 const members = [
@@ -221,24 +194,110 @@ function AboutSection() {
 
 function ServicesSection() {
   return (
-    <section id="layanan" className="bg-brand-soft/60 py-24 scroll-mt-20">
-      <div className="mx-auto max-w-6xl px-5 sm:px-8">
-        <h2 className="text-center text-3xl font-extrabold text-brand sm:text-4xl font-spartan">
-          Layanan Yang Ditawarkan
-        </h2>
-        <div className="mt-12 grid gap-6 sm:grid-cols-2">
-          {services.map((s) => (
-            <article
-              key={s.title}
-              className="rounded-2xl border border-brand/15 bg-card p-7 shadow-sm transition-shadow hover:shadow-lg"
-            >
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand text-brand-foreground">
-                <s.icon size={24} />
-              </div>
-              <h3 className="mt-5 text-lg font-bold text-brand font-spartan">{s.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-foreground/70">{s.desc}</p>
-            </article>
-          ))}
+    <section id="layanan" className="relative bg-muted/30 py-24 scroll-mt-20">
+      <div className="mx-auto max-w-7xl px-5 sm:px-8">
+        {/* Header Seksi */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-12 border-b border-brand/15">
+          <div>
+            <span className="text-xs font-extrabold tracking-widest text-brand uppercase font-spartan">
+              [ PENAWARAN UTAMA ]
+            </span>
+            <h2 className="mt-2 text-3xl font-extrabold text-brand sm:text-4xl lg:text-5xl font-spartan tracking-tight">
+              Layanan Yang Ditawarkan
+            </h2>
+          </div>
+          <p className="max-w-md text-sm sm:text-base text-foreground/75 leading-relaxed">
+            Solusi pengembangan software dan pendampingan IT yang dirancang khusus untuk mendukung pertumbuhan bisnis Anda.
+          </p>
+        </div>
+
+        {/* Bento Grid Layout Kreatif */}
+        <div className="mt-12 grid gap-6 md:grid-cols-12">
+          {/* Card 01 - Featured Large Dark Card */}
+          <div className="md:col-span-7 group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-brand p-8 sm:p-10 text-brand-foreground shadow-xl transition-all duration-300 hover:-translate-y-1">
+            <div className="flex items-center justify-between">
+              <span className="inline-block rounded-full bg-white/10 px-4 py-1 text-xs font-semibold tracking-wider text-white backdrop-blur-md">
+                #DEVELOPMENT
+              </span>
+              <span className="font-spartan text-4xl font-black opacity-30">01</span>
+            </div>
+            <div className="mt-10 sm:mt-14">
+              <h3 className="text-2xl sm:text-3xl font-extrabold font-spartan leading-tight">
+                Custom Software Development
+              </h3>
+              <p className="mt-3 text-sm sm:text-base leading-relaxed opacity-90 max-w-xl">
+                Pengembangan aplikasi web dan sistem internal khusus yang disesuaikan secara presisi dengan alur kerja dan kebutuhan bisnis Anda.
+              </p>
+            </div>
+            <div className="mt-8 pt-6 border-t border-white/15 flex items-center justify-between text-xs font-medium opacity-80">
+              <span>Sistem Internal & Aplikasi Web</span>
+              <span className="h-2 w-2 rounded-full bg-emerald-400" />
+            </div>
+          </div>
+
+          {/* Card 02 */}
+          <div className="md:col-span-5 group relative flex flex-col justify-between overflow-hidden rounded-3xl border border-brand/20 bg-card p-8 sm:p-10 shadow-sm transition-all duration-300 hover:border-brand/40 hover:shadow-md">
+            <div className="flex items-center justify-between">
+              <span className="inline-block rounded-full bg-brand/10 px-4 py-1 text-xs font-semibold tracking-wider text-brand">
+                #STRATEGY
+              </span>
+              <span className="font-spartan text-4xl font-black text-brand/20">02</span>
+            </div>
+            <div className="mt-8">
+              <h3 className="text-xl sm:text-2xl font-bold text-brand font-spartan">
+                Free IT & Business Consultation
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed text-foreground/75">
+                Sesi konsultasi gratis untuk memetakan kebutuhan teknologi serta menentukan prioritas digitalisasi perusahaan Anda.
+              </p>
+            </div>
+            <div className="mt-8 pt-6 border-t border-border text-xs text-foreground/50">
+              Tanpa Biaya Tambahan
+            </div>
+          </div>
+
+          {/* Card 03 */}
+          <div className="md:col-span-5 group relative flex flex-col justify-between overflow-hidden rounded-3xl border border-brand/20 bg-card p-8 sm:p-10 shadow-sm transition-all duration-300 hover:border-brand/40 hover:shadow-md">
+            <div className="flex items-center justify-between">
+              <span className="inline-block rounded-full bg-brand/10 px-4 py-1 text-xs font-semibold tracking-wider text-brand">
+                #TRAINING
+              </span>
+              <span className="font-spartan text-4xl font-black text-brand/20">03</span>
+            </div>
+            <div className="mt-8">
+              <h3 className="text-xl sm:text-2xl font-bold text-brand font-spartan">
+                Free Hands-on Training / Bimtek
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed text-foreground/75">
+                Pelatihan langsung bagi tim Anda agar sistem baru dapat dioperasikan secara optimal dan dikuasai sepenuhnya.
+              </p>
+            </div>
+            <div className="mt-8 pt-6 border-t border-border text-xs text-foreground/50">
+              Bimbingan Langsung
+            </div>
+          </div>
+
+          {/* Card 04 - Wide Accent Card */}
+          <div className="md:col-span-7 group relative flex flex-col justify-between overflow-hidden rounded-3xl border border-brand/25 bg-brand/5 p-8 sm:p-10 shadow-sm transition-all duration-300 hover:border-brand/40 hover:bg-brand/10">
+            <div className="flex items-center justify-between">
+              <span className="inline-block rounded-full bg-brand/15 px-4 py-1 text-xs font-semibold tracking-wider text-brand">
+                #SUPPORT
+              </span>
+              <span className="font-spartan text-4xl font-black text-brand/20">04</span>
+            </div>
+            <div className="mt-8">
+              <h3 className="text-2xl sm:text-3xl font-bold text-brand font-spartan">
+                Free Maintenance During Contract
+              </h3>
+              <p className="mt-3 text-sm sm:text-base leading-relaxed text-foreground/80 max-w-xl">
+                Perawatan rutin, perbaikan kendala, dan dukungan teknis tanpa biaya tambahan selama masa kontrak berjalan.
+              </p>
+            </div>
+            <div className="mt-8 pt-6 border-t border-brand/15 flex items-center justify-between text-xs text-brand font-medium">
+              <span>Jaminan Dukungan Teknis Full</span>
+              <span className="font-bold">100% Covered</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
