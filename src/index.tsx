@@ -110,27 +110,27 @@ function Navbar() {
   );
 }
 
-// SEKSI 01: HERO / BERANDA (Full Edge-to-Edge IMPERIUM + Aesthetic Enlarged Purple STUDIO with White Stroke)
+// SEKSI 01: HERO / BERANDA
 function HeroSection() {
   return (
-    <section id="beranda" className="relative border-b border-brand/15 bg-background py-16 lg:py-24 scroll-mt-20 overflow-x-hidden">
+    <section id="beranda" className="relative border-b border-brand/15 bg-background py-14 lg:py-20 scroll-mt-20 overflow-hidden">
       <div className="w-full px-0">
         
-        {/* Giant Edge-to-Edge IMPERIUM Text with Aesthetic STUDIO Overlay */}
-        <div className="relative w-full flex items-center justify-center my-4 sm:my-8 select-none overflow-hidden">
+        {/* Mentok Full Edge-to-Edge IMPERIUM dengan Overlay Studio */}
+        <div className="relative w-full flex items-center justify-center my-2 sm:my-6 select-none overflow-hidden py-2">
           
-          {/* Mentok dari Kiri ke Kanan tanpa sisa margin/padding */}
-          <h1 className="w-full text-center text-[20vw] font-black tracking-tighter uppercase font-spartan text-brand leading-[0.85] whitespace-nowrap transform scale-y-110">
+          {/* Teks IMPERIUM Raksasa Full Mentok Ujung ke Ujung */}
+          <h1 className="w-full text-center text-[23vw] font-black tracking-tighter uppercase font-spartan text-brand leading-[0.78] whitespace-nowrap transform scale-x-105 scale-y-110 origin-center">
             IMPERIUM
           </h1>
           
-          {/* Tulisan STUDIO Diperbesar, Font Estetik Serif Italic, Warna Ungu + Stroke Putih */}
-          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+          {/* Teks Studio Estetik dengan Stroke Putih Lebih Tebal */}
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-10">
             <span 
-              className="font-serif italic text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-brand font-extrabold tracking-widest"
+              className="font-serif italic text-5xl sm:text-7xl md:text-8xl lg:text-[7.5rem] text-brand font-extrabold tracking-wider filter drop-shadow-md"
               style={{
-                WebkitTextStroke: "2.5px white",
-                textShadow: "0 4px 20px rgba(0,0,0,0.15)"
+                WebkitTextStroke: "5px white",
+                paintOrder: "stroke fill",
               }}
             >
               Studio
@@ -139,17 +139,17 @@ function HeroSection() {
         </div>
 
         {/* Tagline di Tengah */}
-        <div className="mt-8 sm:mt-12 max-w-2xl mx-auto text-center px-6">
-          <p className="text-xs sm:text-sm md:text-base leading-relaxed text-foreground/80 font-poppins font-normal">
+        <div className="mt-6 sm:mt-10 max-w-xl mx-auto text-center px-6">
+          <p className="text-sm sm:text-base leading-relaxed text-foreground/85 font-poppins font-normal tracking-wide">
             Akselerasi efisiensi bisnis Anda melalui integrasi sistem digital pintar yang dirancang presisi sesuai alur kerja perusahaan.
           </p>
         </div>
 
-        {/* Tombol Tentang Kami */}
-        <div className="mt-8 sm:mt-10 flex justify-center">
+        {/* Tombol Tentang Kami Rounded / Pill */}
+        <div className="mt-8 flex justify-center">
           <a
             href="#tentang-kami"
-            className="inline-flex items-center gap-3 bg-brand text-brand-foreground px-8 py-4 text-xs font-extrabold tracking-widest uppercase font-spartan hover:bg-brand/90 transition-all shadow-lg hover:scale-105"
+            className="inline-flex items-center gap-3 bg-brand text-white px-9 py-4 rounded-full text-xs font-extrabold tracking-widest uppercase font-spartan hover:bg-brand/90 transition-all duration-300 shadow-lg shadow-brand/25 hover:shadow-xl hover:shadow-brand/40 hover:-translate-y-0.5 active:translate-y-0"
           >
             TENTANG KAMI <ArrowRight size={16} />
           </a>
