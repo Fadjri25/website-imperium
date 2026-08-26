@@ -113,18 +113,18 @@ function Navbar() {
 // SEKSI 01: HERO / BERANDA
 function HeroSection() {
   return (
-    <section id="beranda" className="relative border-b border-brand/15 bg-background py-14 lg:py-20 scroll-mt-20 overflow-hidden">
+    <section id="beranda" className="relative border-b border-brand/15 bg-background py-16 lg:py-24 scroll-mt-20 overflow-hidden">
       <div className="w-full px-0">
         
-        {/* Mentok Full Edge-to-Edge IMPERIUM dengan Overlay Studio */}
-        <div className="relative w-full flex items-center justify-center my-2 sm:my-6 select-none overflow-hidden py-2">
+        {/* Kontainer Utama Teks Mentok Kiri-Kanan & Ditarik Lebih Tinggi */}
+        <div className="relative w-full flex items-center justify-center my-4 sm:my-8 select-none py-6 sm:py-12 overflow-hidden">
           
-          {/* Teks IMPERIUM Raksasa Full Mentok Ujung ke Ujung */}
-          <h1 className="w-full text-center text-[23vw] font-black tracking-tighter uppercase font-spartan text-brand leading-[0.78] whitespace-nowrap transform scale-x-105 scale-y-110 origin-center">
+          {/* Teks IMPERIUM Raksasa Dibuat Lebih Tinggi (scale-y-[1.6]) & Kaki Atas Bawah Panjang */}
+          <h1 className="w-full text-center text-[23vw] font-black tracking-tighter uppercase font-spartan text-brand leading-[0.75] whitespace-nowrap transform scale-x-105 scale-y-[1.6] origin-center">
             IMPERIUM
           </h1>
           
-          {/* Teks Studio Estetik dengan Stroke Putih Lebih Tebal */}
+          {/* Teks Studio Estetik dengan Stroke Putih Tebal */}
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-10">
             <span 
               className="font-serif italic text-5xl sm:text-7xl md:text-8xl lg:text-[7.5rem] text-brand font-extrabold tracking-wider filter drop-shadow-md"
@@ -139,7 +139,7 @@ function HeroSection() {
         </div>
 
         {/* Tagline di Tengah */}
-        <div className="mt-6 sm:mt-10 max-w-xl mx-auto text-center px-6">
+        <div className="mt-10 sm:mt-14 max-w-xl mx-auto text-center px-6">
           <p className="text-sm sm:text-base leading-relaxed text-foreground/85 font-poppins font-normal tracking-wide">
             Akselerasi efisiensi bisnis Anda melalui integrasi sistem digital pintar yang dirancang presisi sesuai alur kerja perusahaan.
           </p>
