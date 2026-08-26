@@ -116,11 +116,16 @@ function HeroSection() {
     <section id="beranda" className="relative border-b border-brand/15 bg-background py-16 lg:py-24 scroll-mt-20 overflow-hidden">
       <div className="w-full px-0">
         
-        {/* Kontainer Utama Teks Mentok Kiri-Kanan & Ditarik Lebih Tinggi */}
-        <div className="relative w-full flex items-center justify-center my-4 sm:my-8 select-none py-6 sm:py-12 overflow-hidden">
+        {/* Kontainer Utama IMPERIUM dengan ruang vertikal (padding) yang cukup agar kepala huruf tidak terpotong */}
+        <div className="relative w-full flex items-center justify-center my-6 sm:my-12 py-10 sm:py-16 select-none overflow-visible">
           
-          {/* Teks IMPERIUM Raksasa Dibuat Lebih Tinggi (scale-y-[1.6]) & Kaki Atas Bawah Panjang */}
-          <h1 className="w-full text-center text-[23vw] font-black tracking-tighter uppercase font-spartan text-brand leading-[0.75] whitespace-nowrap transform scale-x-105 scale-y-[1.6] origin-center">
+          {/* Teks IMPERIUM: Dipertebal dengan WebkitTextStroke & Skala Vertikal Pas (Tidak Terpotong) */}
+          <h1 
+            className="w-full text-center text-[22vw] font-black tracking-tighter uppercase font-spartan text-brand leading-none whitespace-nowrap transform scale-x-105 scale-y-[1.35] origin-center"
+            style={{
+              WebkitTextStroke: "2px currentColor",
+            }}
+          >
             IMPERIUM
           </h1>
           
@@ -139,7 +144,7 @@ function HeroSection() {
         </div>
 
         {/* Tagline di Tengah */}
-        <div className="mt-10 sm:mt-14 max-w-xl mx-auto text-center px-6">
+        <div className="mt-8 sm:mt-12 max-w-xl mx-auto text-center px-6">
           <p className="text-sm sm:text-base leading-relaxed text-foreground/85 font-poppins font-normal tracking-wide">
             Akselerasi efisiensi bisnis Anda melalui integrasi sistem digital pintar yang dirancang presisi sesuai alur kerja perusahaan.
           </p>
