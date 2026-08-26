@@ -4,7 +4,6 @@ import {
   Mail,
   MapPin,
   ArrowRight,
-  Sparkles,
   CheckCircle2,
 } from "lucide-react";
 
@@ -70,7 +69,7 @@ const contactItems = [
   { icon: MapPin, label: "Lokasi Kantor", value: "Pontianak, Kalimantan Barat" },
 ];
 
-// Logo Component - Presisi & Full White di Footer
+// Logo Component
 function Logo({ className = "", light = false }: { className?: string; light?: boolean }) {
   return (
     <a href="#beranda" className={`inline-flex items-center gap-0.5 group cursor-pointer ${className}`}>
@@ -111,42 +110,42 @@ function Navbar() {
   );
 }
 
-// SEKSI 01: HERO / BERANDA (Rombak Total: Giant IMPERIUM + Embedded STUDIO + Centered Tagline & Button)
+// SEKSI 01: HERO / BERANDA (Full Edge-to-Edge IMPERIUM + Aesthetic Enlarged Purple STUDIO with White Stroke)
 function HeroSection() {
   return (
-    <section id="beranda" className="relative border-b border-brand/15 bg-background py-20 lg:py-28 scroll-mt-20 overflow-hidden">
-      <div className="mx-auto w-full px-4 sm:px-6">
+    <section id="beranda" className="relative border-b border-brand/15 bg-background py-16 lg:py-24 scroll-mt-20 overflow-x-hidden">
+      <div className="w-full px-0">
         
-        {/* Top Tag Header */}
-        <div className="flex justify-center mb-6 sm:mb-8">
-          <div className="inline-flex items-center gap-2 text-[11px] sm:text-xs font-extrabold tracking-widest uppercase text-brand font-spartan bg-brand/5 px-4 py-1.5 border border-brand/15">
-            <Sparkles size={14} />
-            <span>IT CONSULTANT & SYSTEM AUTOMATION</span>
-          </div>
-        </div>
-
-        {/* Giant Edge-to-Edge IMPERIUM Text with Center STUDIO Badge */}
-        <div className="relative w-full text-center flex items-center justify-center my-4 sm:my-8 overflow-hidden py-4">
-          <h1 className="text-[13.5vw] lg:text-[14vw] font-black tracking-tighter uppercase font-spartan text-brand leading-none w-full select-none transform scale-y-125">
+        {/* Giant Edge-to-Edge IMPERIUM Text with Aesthetic STUDIO Overlay */}
+        <div className="relative w-full flex items-center justify-center my-4 sm:my-8 select-none overflow-hidden">
+          
+          {/* Mentok dari Kiri ke Kanan tanpa sisa margin/padding */}
+          <h1 className="w-full text-center text-[20vw] font-black tracking-tighter uppercase font-spartan text-brand leading-[0.85] whitespace-nowrap transform scale-y-110">
             IMPERIUM
           </h1>
           
-          {/* Embedded STUDIO kecil di tengah tulisan IMPERIUM */}
+          {/* Tulisan STUDIO Diperbesar, Font Estetik Serif Italic, Warna Ungu + Stroke Putih */}
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-            <span className="bg-background text-foreground px-4 sm:px-6 py-1.5 sm:py-2 text-xs sm:text-sm md:text-base font-extrabold tracking-[0.35em] uppercase font-poppins border-2 border-brand shadow-2xl">
-              STUDIO
+            <span 
+              className="font-serif italic text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-brand font-extrabold tracking-widest"
+              style={{
+                WebkitTextStroke: "2.5px white",
+                textShadow: "0 4px 20px rgba(0,0,0,0.15)"
+              }}
+            >
+              Studio
             </span>
           </div>
         </div>
 
-        {/* Tagline di Tengah dengan Font Poppins Kecil */}
-        <div className="mt-8 sm:mt-12 max-w-2xl mx-auto text-center px-4">
+        {/* Tagline di Tengah */}
+        <div className="mt-8 sm:mt-12 max-w-2xl mx-auto text-center px-6">
           <p className="text-xs sm:text-sm md:text-base leading-relaxed text-foreground/80 font-poppins font-normal">
             Akselerasi efisiensi bisnis Anda melalui integrasi sistem digital pintar yang dirancang presisi sesuai alur kerja perusahaan.
           </p>
         </div>
 
-        {/* Tombol Tentang Kami di Tengah */}
+        {/* Tombol Tentang Kami */}
         <div className="mt-8 sm:mt-10 flex justify-center">
           <a
             href="#tentang-kami"
