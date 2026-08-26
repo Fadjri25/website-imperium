@@ -69,14 +69,14 @@ const contactItems = [
   { icon: MapPin, label: "Lokasi Kantor", value: "Pontianak, Kalimantan Barat" },
 ];
 
-// Logo Component (Menggunakan negative margin untuk merapatkan logo im ke kata PERIUM)
+// Logo Component (Spasi seimbang antara logo mark & teks PERIUM)
 function Logo({ className = "", light = false }: { className?: string; light?: boolean }) {
   return (
-    <a href="#beranda" className={`inline-flex items-center group cursor-pointer ${className}`}>
+    <a href="#beranda" className={`inline-flex items-center gap-2 group cursor-pointer ${className}`}>
       <img
         src={mark}
         alt="Imperium Studio Logo"
-        className={`h-7 sm:h-8 w-auto object-contain shrink-0 transition-transform group-hover:scale-105 -translate-y-[3px] -mr-1.5 sm:-mr-2 ${
+        className={`h-7 sm:h-8 w-auto object-contain shrink-0 transition-transform group-hover:scale-105 -translate-y-[2px] mr-0.5 ${
           light ? "brightness-0 invert" : ""
         }`}
       />
@@ -324,11 +324,14 @@ function TeamSection() {
           {members.map((m, idx) => (
             <div key={m.name} className="group relative border border-brand/20 bg-card overflow-hidden">
               <div className="aspect-square w-full overflow-hidden bg-muted">
+                {/* Foto Jesika di-zoom (scale-125 object-top) agar konsisten dengan anggota lain */}
                 <img
                   src={m.img}
                   alt={m.name}
                   loading="lazy"
-                  className="h-full w-full object-cover filter contrast-[1.05] grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500"
+                  className={`h-full w-full object-cover filter contrast-[1.05] grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500 ${
+                    m.name.includes("Jesika") ? "scale-125 object-top" : ""
+                  }`}
                 />
               </div>
               <div className="p-4 bg-background border-t border-brand/15">
@@ -396,12 +399,13 @@ function ContactSection() {
             </div>
           </div>
 
+          {/* Foto Jesika Kontak di-zoom (scale-125 object-top) */}
           <div className="lg:col-span-5 flex justify-center">
             <div className="relative w-full max-w-md border-4 border-white shadow-2xl overflow-hidden bg-white/5">
               <img
                 src={jesika}
                 alt="Jesika Tan Kontak Utama"
-                className="w-full aspect-[4/5] object-cover filter contrast-[1.05]"
+                className="w-full aspect-[4/5] object-cover filter contrast-[1.05] scale-125 object-top"
               />
               <div className="absolute bottom-0 inset-x-0 bg-brand/90 p-4 backdrop-blur-md border-t border-white/20">
                 <p className="text-xs font-bold uppercase tracking-widest font-spartan">
